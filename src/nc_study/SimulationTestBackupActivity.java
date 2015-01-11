@@ -1,6 +1,7 @@
 package nc_study;
 
-import nc_lib.*;
+import nc.lib.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,12 +54,12 @@ public class SimulationTestBackupActivity extends Activity {
 
 	//private ImageView imageView;
 
-	/** ½«Ð¡Ô²µãµÄÍ¼Æ¬ÓÃÊý×é±íÊ¾ */
+	/** ï¿½ï¿½Ð¡Ô²ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ */
 	//private ImageView[] imageViews;
 
-	// °ü¹ü»¬¶¯Í¼Æ¬µÄLinearLayout
+	// ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½LinearLayout
 	private ViewGroup viewPics;
-	// °ü¹üÐ¡Ô²µãµÄLinearLayout
+	// ï¿½ï¿½ï¿½Ð¡Ô²ï¿½ï¿½ï¿½LinearLayout
 	//private ViewGroup viewPoints;
 
 	private SimulationDBManager db;
@@ -78,7 +79,7 @@ public class SimulationTestBackupActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.simulation_test);
 
-		/* ÉèÖÃÎÞ±êÌâÀ¸ */
+		/* ï¿½ï¿½ï¿½ï¿½ï¿½Þ±ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		LayoutInflater main_inflater = LayoutInflater.from(this);
@@ -119,7 +120,7 @@ public class SimulationTestBackupActivity extends Activity {
 		List<EssayQuestion> EssayQuestions = db
 				.query_essayquestion_by_paper_id(QuestionPaper01.id);
 
-		// ½¨Á¢µ¥Ñ¡Ìâ´°¿Ú
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½â´°ï¿½ï¿½
 		int SingleSelsNum = SingleSels.size();
 
 		for (int n = 0; n < SingleSelsNum; n++) {
@@ -158,12 +159,12 @@ public class SimulationTestBackupActivity extends Activity {
 			Button btReferenceAnswer = (Button) view
 					.findViewById(R.id.btReferenceAnswer);
 
-			tvReferenceAnswer.setText("²Î¿¼´ð°¸:" + SingleSel.reference_answer);
+			tvReferenceAnswer.setText("ï¿½Î¿ï¿½ï¿½ï¿½:" + SingleSel.reference_answer);
 			tvReferenceAnswer.setVisibility(View.INVISIBLE);
 
 			TextView tvAnalysisAnswer = (TextView) view
 					.findViewById(R.id.tvAnalysisAnswer);
-			tvAnalysisAnswer.setText("´ð°¸½âÎö:ÂÔ");
+			tvAnalysisAnswer.setText("ï¿½ð°¸½ï¿½ï¿½ï¿½:ï¿½ï¿½");
 			tvAnalysisAnswer.setVisibility(View.INVISIBLE);
 			
 			// TODO
@@ -175,8 +176,8 @@ public class SimulationTestBackupActivity extends Activity {
 					 * .findViewById(R.id.tvReferenceAnswer);
 					 */
 					// tvReferenceAnswer.setVisibility(View.GONE);
-					DisplayToast("²Î¿¼´ð°¸:" + SingleSel.reference_answer);
-					tvReferenceAnswer.setText("²Î¿¼´ð°¸:"
+					DisplayToast("ï¿½Î¿ï¿½ï¿½ï¿½:" + SingleSel.reference_answer);
+					tvReferenceAnswer.setText("ï¿½Î¿ï¿½ï¿½ï¿½:"
 							+ SingleSel.reference_answer);
 				}
 			});
@@ -192,27 +193,27 @@ public class SimulationTestBackupActivity extends Activity {
 
 		}
 
-		// ´´½¨imageviewsÊý×é£¬´óÐ¡ÊÇÒªÏÔÊ¾µÄÍ¼Æ¬µÄÊýÁ¿
+		// ï¿½ï¿½ï¿½ï¿½imageviewsï¿½ï¿½ï¿½é£¬ï¿½ï¿½Ð¡ï¿½ï¿½Òªï¿½ï¿½Ê¾ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		//imageViews = new ImageView[pageViewList.size()];
-		// ´ÓÖ¸¶¨µÄXMLÎÄ¼þ¼ÓÔØÊÓÍ¼
+		// ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½XMLï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 		viewPics = (ViewGroup) inflater.inflate(R.layout.simulation_test, null);
 
 		
 
-		// ÊµÀý»¯Ð¡Ô²µãµÄlinearLayoutºÍviewpager
+		// Êµï¿½ï¿½Ð¡Ô²ï¿½ï¿½ï¿½linearLayoutï¿½ï¿½viewpager
 		//viewPoints = (ViewGroup) viewPics.findViewById(R.id.viewGroup);
 
-		// Ìí¼ÓÐ¡Ô²µãµÄÍ¼Æ¬
+		// ï¿½ï¿½ï¿½Ð¡Ô²ï¿½ï¿½ï¿½Í¼Æ¬
 /*		for (int i = 0; i < pageViewList.size(); i++) {
 			imageView = new ImageView(SimulationTestActivity.this);
-			// ÉèÖÃÐ¡Ô²µãimageviewµÄ²ÎÊý
-			imageView.setLayoutParams(new LayoutParams(20, 20));// ´´½¨Ò»¸ö¿í¸ß¾ùÎª20
+			// ï¿½ï¿½ï¿½ï¿½Ð¡Ô²ï¿½ï¿½imageviewï¿½Ä²ï¿½ï¿½ï¿½
+			imageView.setLayoutParams(new LayoutParams(20, 20));// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ß¾ï¿½Îª20
 
 			imageView.setPadding(20, 0, 20, 0);
-			// ½«Ð¡Ô²µãlayoutÌí¼Óµ½Êý×éÖÐ
+			// ï¿½ï¿½Ð¡Ô²ï¿½ï¿½layoutï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			imageViews[i] = imageView;
 
-			// Ä¬ÈÏÑ¡ÖÐµÄÊÇµÚÒ»ÕÅÍ¼Æ¬£¬´ËÊ±µÚÒ»¸öÐ¡Ô²µãÊÇÑ¡ÖÐ×´Ì¬£¬ÆäËû²»ÊÇ
+			// Ä¬ï¿½ï¿½Ñ¡ï¿½Ðµï¿½ï¿½Çµï¿½Ò»ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ò»ï¿½ï¿½Ð¡Ô²ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (i == 0) {
 				imageViews[i]
 						.setBackgroundResource(R.drawable.page_indicator_focused);
@@ -220,11 +221,11 @@ public class SimulationTestBackupActivity extends Activity {
 				imageViews[i].setBackgroundResource(R.drawable.page_indicator);
 			}
 
-			// ½«imageviewsÌí¼Óµ½Ð¡Ô²µãÊÓÍ¼×é
+			// ï¿½ï¿½imageviewsï¿½ï¿½Óµï¿½Ð¡Ô²ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½
 			viewPoints.addView(imageViews[i]);
 		}*/
 
-		// ÏÔÊ¾»¬¶¯Í¼Æ¬µÄÊÓÍ¼
+		// ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½Í¼
 		setContentView(viewPics);
 		
 		viewPager = (ViewPager) viewPics.findViewById(R.id.viewPager);
@@ -241,14 +242,14 @@ public class SimulationTestBackupActivity extends Activity {
 
 	public void db_update(View view) {
 		QuestionPaper QuestionPaper = new QuestionPaper();
-		QuestionPaper.name = "Ò»½¨»úµç05ÄêÕæÌâ";
-		QuestionPaper.name = "Ò»½¨»úµç2015ÄêÕæÌâ";
+		QuestionPaper.name = "Ò»ï¿½ï¿½ï¿½ï¿½ï¿½05ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+		QuestionPaper.name = "Ò»ï¿½ï¿½ï¿½ï¿½ï¿½2015ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		// db.updateAge(QuestionPaper);
 	}
 
 	public void db_delete(View view) {
 		QuestionPaper QuestionPaper = new QuestionPaper();
-		QuestionPaper.name = "Ò»½¨»úµç2015ÄêÕæÌâ";
+		QuestionPaper.name = "Ò»ï¿½ï¿½ï¿½ï¿½ï¿½2015ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		// db.deleteOldQuestionPaper(QuestionPaper);
 	}
 
@@ -275,14 +276,14 @@ public class SimulationTestBackupActivity extends Activity {
 	/*
 	 * public void db_queryTheCursor(View view) { Cursor c =
 	 * db.queryTheCursor(); startManagingCursor(c); //
-	 * ÍÐ¸¶¸øactivity¸ù¾Ý×Ô¼ºµÄÉúÃüÖÜÆÚÈ¥¹ÜÀíCursorµÄÉúÃüÖÜÆÚ CursorWrapper cursorWrapper = new
+	 * ï¿½Ð¸ï¿½ï¿½ï¿½activityï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½Cursorï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CursorWrapper cursorWrapper = new
 	 * CursorWrapper(c) {
 	 * 
-	 * @Override public String getString(int columnIndex) { // ½«¼ò½éÇ°¼ÓÉÏÄêÁä if
+	 * @Override public String getString(int columnIndex) { // ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ if
 	 * (getColumnName(columnIndex).equals("info")) { int age =
 	 * getInt(getColumnIndex("age")); return age + " years old, " +
 	 * super.getString(columnIndex); } return super.getString(columnIndex); } };
-	 * // È·±£²éÑ¯½á¹ûÖÐÓÐ"_id"ÁÐ
+	 * // È·ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"_id"ï¿½ï¿½
 	 * 
 	 * SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
 	 * android.R.layout.simple_list_item_2, cursorWrapper, new String[]{"name",
@@ -302,7 +303,7 @@ public class SimulationTestBackupActivity extends Activity {
 
 	class GuidePageAdapter extends PagerAdapter {
 
-		// Ïú»ÙpositionÎ»ÖÃµÄ½çÃæ
+		// ï¿½ï¿½ï¿½positionÎ»ï¿½ÃµÄ½ï¿½ï¿½ï¿½
 		@Override
 		public void destroyItem(View v, int position, Object arg2) {
 			// TODO Auto-generated method stub
@@ -316,14 +317,14 @@ public class SimulationTestBackupActivity extends Activity {
 
 		}
 
-		// »ñÈ¡µ±Ç°´°Ìå½çÃæÊý
+		// ï¿½ï¿½È¡ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
 			return pageViewList.size();
 		}
 
-		// ³õÊ¼»¯positionÎ»ÖÃµÄ½çÃæ
+		// ï¿½ï¿½Ê¼ï¿½ï¿½positionÎ»ï¿½ÃµÄ½ï¿½ï¿½ï¿½
 		@Override
 		public Object instantiateItem(View v, int position) {
 			// TODO Auto-generated method stub
@@ -331,7 +332,7 @@ public class SimulationTestBackupActivity extends Activity {
 			return pageViewList.get(position);
 		}
 
-		// ÅÐ¶ÏÊÇ·ñÓÉ¶ÔÏóÉú³É½çÃæ
+		// ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
 		@Override
 		public boolean isViewFromObject(View v, Object arg1) {
 			// TODO Auto-generated method stub
@@ -373,11 +374,11 @@ public class SimulationTestBackupActivity extends Activity {
 					myDrawable.getIntrinsicHeight());
 			ImageSpan span = new ImageSpan(myDrawable, ImageSpan.ALIGN_BASELINE);
 
-			ForegroundColorSpan fcs = new ForegroundColorSpan(Color.GREEN);// ×ÖÌåÑÕÉ«ÉèÖÃÎªÂÌÉ«
+			ForegroundColorSpan fcs = new ForegroundColorSpan(Color.GREEN);// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½É«
 			// ssb.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);//
-			// ÉèÖÃÍ¼±ê
+			// ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½
 			// ssb.setSpan(fcs, 1, ssb.length(),
-			// Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);// ÉèÖÃ×ÖÌåÑÕÉ«
+			// Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
 			ssb.setSpan(new RelativeSizeSpan(1.2f), 1, ssb.length(),
 					Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
@@ -424,7 +425,7 @@ public class SimulationTestBackupActivity extends Activity {
 		/*	for (int i = 0; i < imageViews.length; i++) {
 				imageViews[position]
 						.setBackgroundResource(R.drawable.page_indicator_focused);
-				// ²»ÊÇµ±Ç°Ñ¡ÖÐµÄpage£¬ÆäÐ¡Ô²µãÉèÖÃÎªÎ´Ñ¡ÖÐµÄ×´Ì¬
+				// ï¿½ï¿½ï¿½Çµï¿½Ç°Ñ¡ï¿½Ðµï¿½pageï¿½ï¿½ï¿½ï¿½Ð¡Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÎ´Ñ¡ï¿½Ðµï¿½×´Ì¬
 				if (position != i) {
 					imageViews[i]
 							.setBackgroundResource(R.drawable.page_indicator);
@@ -456,19 +457,19 @@ public class SimulationTestBackupActivity extends Activity {
 			int RadioButtonId = group.getCheckedRadioButtonId();
 			switch (RadioButtonId) {
 			case R.id.radioButton1:
-				DisplayToast("ÄãÑ¡ÔñµÄÊÇ: A");
+				DisplayToast("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½: A");
 				break;
 			case R.id.radioButton2:
-				DisplayToast("ÄãÑ¡ÔñµÄÊÇ: B");
+				DisplayToast("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½: B");
 				break;
 			case R.id.radioButton3:
-				DisplayToast("ÄãÑ¡ÔñµÄÊÇ: C");
+				DisplayToast("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½: C");
 				break;
 			case R.id.radioButton4:
-				DisplayToast("ÄãÑ¡ÔñµÄÊÇ: D");
+				DisplayToast("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½: D");
 				break;
 			default:
-				DisplayToast("ÄãÎ´Ñ¡Ôñ!");
+				DisplayToast("ï¿½ï¿½Î´Ñ¡ï¿½ï¿½!");
 				break;
 			}
 
@@ -477,9 +478,9 @@ public class SimulationTestBackupActivity extends Activity {
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
-		// ÉèÖÃtoastÏÔÊ¾µÄÎ»ÖÃ
+		// ï¿½ï¿½ï¿½ï¿½toastï¿½ï¿½Ê¾ï¿½ï¿½Î»ï¿½ï¿½
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ÏÔÊ¾¸ÃToast
+		// ï¿½ï¿½Ê¾ï¿½ï¿½Toast
 		toast.show();
 	}
 
@@ -491,7 +492,7 @@ public class SimulationTestBackupActivity extends Activity {
 				TextView tvReferenceAnswer = (TextView) v
 						.findViewById(R.id.tvReferenceAnswer);
 				// tvReferenceAnswer.setVisibility(View.GONE);
-				// tvReferenceAnswer.setText("²Î¿¼´ð°¸:" +
+				// tvReferenceAnswer.setText("ï¿½Î¿ï¿½ï¿½ï¿½:" +
 				// SingleSel.reference_answer);
 				DisplayToast("fuck");
 				// Log.d(TAG, "Start to recorder video\n");

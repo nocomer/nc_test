@@ -1,6 +1,7 @@
 package nc_study;
 
-import nc_lib.*;
+import nc.lib.*;
+
 import java.util.List;
 
 import cn.com.jdsc.R;
@@ -96,7 +97,7 @@ public class SimulationSingleSelFragment extends Fragment {
 		
 		/*
 		 * ViewGroup p = (ViewGroup) view.getParent(); if (p != null) {
-		 * p.removeAllViewsInLayout(); Log.v("tag", "fragment1-->ÒÆ³ıÒÑ´æÔÚµÄView"); }
+		 * p.removeAllViewsInLayout(); Log.v("tag", "fragment1-->é”Ÿç‹¡ç­¹æ‹·é”Ÿçª–è¾¾æ‹·é”ŸèŠ‚ç¢‰æ‹·View"); }
 		 */
 
 		view = inflater.inflate(R.layout.simulation_page_single_selection,
@@ -120,10 +121,10 @@ public class SimulationSingleSelFragment extends Fragment {
 		tvReferenceAnswer = (TextView) view
 				.findViewById(R.id.tvReferenceAnswer);
 
-		tvReferenceAnswer.setText("¡¾²Î¿¼´ğ°¸¡¿");
+		tvReferenceAnswer.setText("ã€å‚è€ƒç­”æ¡ˆã€‘");
 
 		tvAnalysisAnswer = (TextView) view.findViewById(R.id.tvAnalysisAnswer);
-		tvAnalysisAnswer.setText("¡¾´ğ°¸½âÎö¡¿");
+		tvAnalysisAnswer.setText("ã€ç­”æ¡ˆè§£æã€‘");
 		
 		
 		
@@ -186,9 +187,9 @@ public class SimulationSingleSelFragment extends Fragment {
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(getActivity(), str, Toast.LENGTH_LONG);
-		// ÉèÖÃtoastÏÔÊ¾µÄÎ»ÖÃ
+		// é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·toasté”Ÿæ–¤æ‹·ç¤ºé”Ÿæ–¤æ‹·ä½é”Ÿæ–¤æ‹·
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ÏÔÊ¾¸ÃToast
+		// é”Ÿæ–¤æ‹·ç¤ºé”Ÿæ–¤æ‹·Toast
 		toast.show();
 	}
 	
@@ -198,19 +199,19 @@ public class SimulationSingleSelFragment extends Fragment {
 			int RadioButtonId = group.getCheckedRadioButtonId();
 			switch (RadioButtonId) {
 			case R.id.radioButton1:
-				DisplayToast("ÄãÑ¡ÔñµÄÊÇ: A");
+				DisplayToast("ä½ é€‰æ‹©çš„æ˜¯A");
 				break;
 			case R.id.radioButton2:
-				DisplayToast("ÄãÑ¡ÔñµÄÊÇ: B");
+				DisplayToast("ä½ é€‰æ‹©çš„æ˜¯B");
 				break;
 			case R.id.radioButton3:
-				DisplayToast("ÄãÑ¡ÔñµÄÊÇ: C");
+				DisplayToast("ä½ é€‰æ‹©çš„æ˜¯C");
 				break;
 			case R.id.radioButton4:
-				DisplayToast("ÄãÑ¡ÔñµÄÊÇ: D");
+				DisplayToast("ä½ é€‰æ‹©çš„æ˜¯ D");
 				break;
 			default:
-				DisplayToast("ÄãÎ´Ñ¡Ôñ!");
+				DisplayToast("ä½ æœªé€‰æ‹©é€‰é¡¹!");
 				break;
 			}
 

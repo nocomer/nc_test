@@ -1,4 +1,4 @@
-package nc_lib;
+package nc.lib;
 
 import android.app.AlertDialog;
 import android.app.Application;
@@ -9,18 +9,18 @@ public class Debug extends Application {
 	
 	public void nc_dialog(String msg){
 		new AlertDialog.Builder(this)
-			.setTitle("提示")
+			.setTitle("锟斤拷示")
 			.setMessage(msg)
-			.setPositiveButton("确定",null)
+			.setPositiveButton("确锟斤拷",null)
 			.show();
 	}
 	
 	public void nc_toast(String str)  
     {  
         Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);  
-        //设置toast显示的位置  
+        //锟斤拷锟斤拷toast锟斤拷示锟斤拷位锟斤拷  
         toast.setGravity(Gravity.TOP, 0, 220);  
-        //显示该Toast  
+        //锟斤拷示锟斤拷Toast  
         toast.show();
     }
 	

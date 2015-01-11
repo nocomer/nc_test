@@ -1,4 +1,4 @@
-package nc_lib;
+package nc.lib;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -16,7 +16,7 @@ public class Sqlite extends SQLiteOpenHelper {
 		// TODO Auto-generated constructor stub
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
-	//´´½¨table
+	//ï¿½ï¿½ï¿½ï¿½table
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		String sql = "CREATE TABLE " + TABLE_NAME + " (" + BOOK_ID
@@ -36,7 +36,7 @@ public class Sqlite extends SQLiteOpenHelper {
 		.query(TABLE_NAME, null, null, null, null, null, null);
 		return cursor;
 	}
-	//Ôö¼Ó²Ù×÷
+	//ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½
 	public long insert(String bookname,String author)
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -47,7 +47,7 @@ public class Sqlite extends SQLiteOpenHelper {
 		long row = db.insert(TABLE_NAME, null, cv);
 		return row;
 	}
-	//É¾³ý²Ù×÷
+	//É¾ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void delete(int id)
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -55,7 +55,7 @@ public class Sqlite extends SQLiteOpenHelper {
 		String[] whereValue ={ Integer.toString(id) };
 		db.delete(TABLE_NAME, where, whereValue);
 	}
-	//ÐÞ¸Ä²Ù×÷
+	//ï¿½Þ¸Ä²ï¿½ï¿½ï¿½
 	public void update(int id, String bookname,String author)
 	{
 		SQLiteDatabase db = this.getWritableDatabase();

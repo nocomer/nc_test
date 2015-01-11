@@ -1,4 +1,4 @@
-package nc_lib;
+package nc.lib;
 
 import android.app.Activity;
 import android.app.Application;
@@ -30,11 +30,11 @@ public class HttpInter extends Application {
 		JSONArray jsonArray = null;
 		
 		if(bl_debug_mode){
-			//���˵�����+�����Ӳ˵�����
+			//锟斤拷锟剿碉拷锟斤拷锟斤拷+锟斤拷锟斤拷锟接菜碉拷锟斤拷锟斤拷
 			String json = "[" +
-							"{'MainMenu':'ע�Ὠ��ʦ', 'SecondaryMenu':'һ������ʦ����'}," +
-							"{'MainMenu':'ע�Ὠ��ʦ', 'SecondaryMenu':'һ������ʦ����'}," +
-							"{'MainMenu':'ע����ʦ', 'SecondaryMenu':'�м����ʦ'}" +
+							"{'MainMenu':'注锟结建锟斤拷师', 'SecondaryMenu':'一锟斤拷锟斤拷锟斤拷师锟斤拷锟'}," +
+							"{'MainMenu':'注锟结建锟斤拷师', 'SecondaryMenu':'一锟斤拷锟斤拷锟斤拷师锟斤拷锟斤拷'}," +
+							"{'MainMenu':'注锟斤拷锟斤拷师', 'SecondaryMenu':'锟叫硷拷锟斤拷锟绞'}" +
 						  "]";
 			try {
 				jsonArray = new JSONArray(json);
@@ -78,9 +78,9 @@ public class HttpInter extends Application {
 		
 		if(bl_debug_mode){
 			String str = "[" +
-					"{'Category':'ע�Ὠ��ʦ', 'SecondaryCategory':'����','Title':Title'},'Data':'Data'" +
-					"{'Category':'һ������ʦ', 'SecondaryCategory':'����'}," +
-					"{'Category':'������Դ', 'SecondaryCategory':'XX'}" +
+					"{'Category':'注锟结建锟斤拷师', 'SecondaryCategory':'锟斤拷锟�,'Title':Title'},'Data':'Data'" +
+					"{'Category':'一锟斤拷锟斤拷锟斤拷师', 'SecondaryCategory':'锟斤拷锟斤拷'}," +
+					"{'Category':'锟斤拷锟斤拷锟斤拷源', 'SecondaryCategory':'XX'}" +
 				  "]";
 			
 			try {

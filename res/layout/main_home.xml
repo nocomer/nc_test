@@ -102,7 +102,7 @@
  		            android:textSize="18.0sp" />
 
  		          <Button
- 		              android:id="@+id/practice_comfirm_button1"
+ 		              android:id="@+id/practice_comfirm_button2"
  		              android:layout_width="fill_parent"
  		              android:layout_height="fill_parent"
  		              android:layout_below="@+id/remember_user"
@@ -113,7 +113,7 @@
  		              android:textSize="18.0sp" />
 
  		            <Button
- 		                android:id="@+id/practice_comfirm_button1"
+ 		                android:id="@+id/practice_comfirm_button3"
  		                android:layout_width="fill_parent"
  		                android:layout_height="fill_parent"
  		                android:layout_below="@+id/remember_user"
@@ -125,7 +125,7 @@
 
  		    </TableRow>  
  		    <TableRow
- 		    android:id="@+id/tableRow4"
+ 		    android:id="@+id/tableRow5"
  		    android:layout_weight="0"
  		    android:layout_width="fill_parent"
  		    android:layout_height="fill_parent"
@@ -133,7 +133,7 @@
  		    >
 
             <Button
-                android:id="@+id/practice_comfirm_button1"
+                android:id="@+id/practice_comfirm_button4"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@+id/remember_user"
@@ -144,7 +144,7 @@
                 android:textSize="18.0sp" />
 
             <Button
-                android:id="@+id/practice_comfirm_button1"
+                android:id="@+id/practice_comfirm_button5"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@+id/remember_user"
@@ -155,7 +155,7 @@
                 android:textSize="18.0sp" />
 
               <Button
-                  android:id="@+id/practice_comfirm_button1"
+                  android:id="@+id/practice_comfirm_button6"
                   android:layout_width="fill_parent"
                   android:layout_height="fill_parent"
                   android:layout_below="@+id/remember_user"
@@ -166,7 +166,7 @@
                   android:textSize="18.0sp" />
 
                 <Button
-                    android:id="@+id/practice_comfirm_button1"
+                    android:id="@+id/practice_comfirm_button7"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_below="@+id/remember_user"
@@ -178,7 +178,7 @@
 
  		    </TableRow>
  		     <TableRow
- 		    android:id="@+id/tableRow4"
+ 		    android:id="@+id/tableRow6"
  		    android:layout_weight="0"
  		    android:layout_width="fill_parent"
  		    android:layout_height="fill_parent"
@@ -186,7 +186,7 @@
  		    >
 
             <Button
-                android:id="@+id/practice_comfirm_button1"
+                android:id="@+id/practice_comfirm_button8"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@+id/remember_user"
@@ -197,7 +197,7 @@
                 android:textSize="18.0sp" />
 
             <Button
-                android:id="@+id/practice_comfirm_button1"
+                android:id="@+id/practice_comfirm_button9"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@+id/remember_user"
@@ -208,7 +208,7 @@
                 android:textSize="18.0sp" />
 
               <Button
-                  android:id="@+id/practice_comfirm_button1"
+                  android:id="@+id/practice_comfirm_button10"
                   android:layout_width="fill_parent"
                   android:layout_height="fill_parent"
                   android:layout_below="@+id/remember_user"
@@ -219,7 +219,7 @@
                   android:textSize="18.0sp" />
 
                 <Button
-                    android:id="@+id/practice_comfirm_button1"
+                    android:id="@+id/practice_comfirm_button11"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_below="@+id/remember_user"
@@ -231,7 +231,7 @@
 
  		    </TableRow>
  		     <TableRow
- 		    android:id="@+id/tableRow4"
+ 		    android:id="@+id/tableRow7"
  		    android:layout_weight="0"
  		    android:layout_width="fill_parent"
  		    android:layout_height="fill_parent"
@@ -250,18 +250,18 @@
                 android:textSize="18.0sp" />
 
             <Button
-                android:id="@+id/practice_comfirm_button1"
+                android:id="@+id/practice_comfirm_button_test"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@+id/remember_user"
                 android:layout_gravity="fill_vertical"
                 android:background="@drawable/android_big_button_x"
-                android:text="确定"
+                android:text="test"
                 android:textColor="#ff000000"
                 android:textSize="18.0sp" />
 
               <Button
-                  android:id="@+id/practice_comfirm_button1"
+                  android:id="@+id/practice_comfirm_button12"
                   android:layout_width="fill_parent"
                   android:layout_height="fill_parent"
                   android:layout_below="@+id/remember_user"
@@ -272,7 +272,7 @@
                   android:textSize="18.0sp" />
 
                 <Button
-                    android:id="@+id/practice_comfirm_button1"
+                    android:id="@+id/practice_comfirm_button13"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_below="@+id/remember_user"

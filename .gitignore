@@ -7,6 +7,7 @@ nbproject
 .idea
 .project
 .settings
+.classpath
 composer.lock
 sql
 backup
@@ -15,4 +16,6 @@ vendor/bin
 data/books
 data/images
 data/cache
-nc_stest/bin/*.apk
+bin
+bin/*.apk
+bin/*.apk

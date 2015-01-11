@@ -2,6 +2,7 @@ package cn.com.jdsc;
 
 import cube_table.CubeTableActivity;
 import cn.com.jdsc.R;
+import nc.lib.testActivity;
 import nc_study.SimulationTestMainActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,15 +50,32 @@ public class HomeFragment extends Fragment {
 				// getActivity().finish();
 			}
 		});
+		
+		
+		Button practice_comfirm_button_test = (Button) view
+				.findViewById(R.id.practice_comfirm_button_test);
+		
+		practice_comfirm_button_test.setOnClickListener(new Button.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//DisplayToast("CubeTable Practice...");
+				Intent intent = new Intent(getActivity(),
+						testActivity.class);
+				startActivity(intent);
+				// getActivity().finish();
+			}
+		});
+		
+		
 
 		return view;
 	}
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(getActivity(), str, Toast.LENGTH_LONG);
-		// ÉèÖÃtoastÏÔÊ¾µÄÎ»ÖÃ
+		// ï¿½ï¿½ï¿½ï¿½toastï¿½ï¿½Ê¾ï¿½ï¿½Î»ï¿½ï¿½
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ÏÔÊ¾¸ÃToast
+		// ï¿½ï¿½Ê¾ï¿½ï¿½Toast
 		toast.show();
 	}
 }
