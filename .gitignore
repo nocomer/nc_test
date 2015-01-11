@@ -15,3 +15,4 @@ vendor/bin
 data/books
 data/images
 data/cache
+nc_stest/bin/*.apk
