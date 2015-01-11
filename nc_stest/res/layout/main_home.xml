@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/empty_cart_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="#ffffffff">
+ 
+    <RelativeLayout
+        android:id="@+id/top_relative"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip" >
+
+    <ImageView
+        android:id="@+id/titleBg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#106184" />
+
+    <ImageView
+        android:id="@+id/progressImage"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:background="@drawable/android_title_bg_progress"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/titleRightButton"
+        style="\@style/title_right_button"
+        android:layout_width="100.0dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="5.0dip"
+        android:layout_marginTop="2.0dip"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:textSize="15dp"
+        android:padding="10.0dip"
+        android:text="无涯"
+        android:textColor="@color/white"
+        android:singleLine="true" />
+
+</RelativeLayout>
+
+			<RelativeLayout
+			    android:id="@+id/regist_scroller_relative"
+			    android:layout_width="fill_parent"
+			    android:background="#B5B5B5"
+			    android:layout_height="fill_parent"
+			    android:layout_gravity="center_horizontal"
+			    android:layout_alignParentLeft="true"
+			    android:layout_below="@+id/top_relative"
+			    android:layout_marginTop="62dp"
+			    android:padding="10.0dip" >
+			<TableLayout
+		    android:id="@+id/table4"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_gravity="center_horizontal"
+		    android:padding="0dip"
+		    android:stretchColumns="*" >
+		    
+		    <View 
+		        android:background="@color/black" 
+		        android:layout_width="1dp"
+		        android:layout_weight="0"
+		        android:layout_height="1dp"/>
+		    
+			<TableRow
+			    android:id="@+id/tableRow4"
+			    android:layout_weight="0"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:layout_gravity="fill" >
+
+ 		      <Button
+ 		          android:id="@+id/practice_comfirm_button"
+ 		          android:layout_width="fill_parent"
+ 		          android:layout_height="fill_parent"
+ 		          android:layout_below="@+id/remember_user"
+ 		          android:layout_gravity="fill_vertical"
+ 		          android:background="@drawable/android_big_button_x"
+ 		          android:text="单选题"
+ 		          android:textColor="#ff000000"
+ 		          android:textSize="18.0sp" />
+
+ 		        <Button
+ 		            android:id="@+id/practice_comfirm_button1"
+ 		            android:layout_width="fill_parent"
+ 		            android:layout_height="fill_parent"
+ 		            android:layout_below="@+id/remember_user"
+ 		            android:layout_gravity="fill_vertical"
+ 		            android:background="@drawable/android_big_button_x"
+ 		            android:text="多选题"
+ 		            android:textColor="#ff000000"
+ 		            android:textSize="18.0sp" />
+
+ 		          <Button
+ 		              android:id="@+id/practice_comfirm_button1"
+ 		              android:layout_width="fill_parent"
+ 		              android:layout_height="fill_parent"
+ 		              android:layout_below="@+id/remember_user"
+ 		              android:layout_gravity="fill_vertical"
+ 		              android:background="@drawable/android_big_button_x"
+ 		              android:text="案例题"
+ 		              android:textColor="#ff000000"
+ 		              android:textSize="18.0sp" />
+
+ 		            <Button
+ 		                android:id="@+id/practice_comfirm_button1"
+ 		                android:layout_width="fill_parent"
+ 		                android:layout_height="fill_parent"
+ 		                android:layout_below="@+id/remember_user"
+ 		                android:layout_gravity="fill_vertical"
+ 		                android:background="@drawable/android_big_button_x"
+ 		                android:text="历年真题"
+ 		                android:textColor="#ff000000"
+ 		                android:textSize="18.0sp" />
+
+ 		    </TableRow>  
+ 		    <TableRow
+ 		    android:id="@+id/tableRow4"
+ 		    android:layout_weight="0"
+ 		    android:layout_width="fill_parent"
+ 		    android:layout_height="fill_parent"
+ 		    android:layout_gravity="center_horizontal"
+ 		    >
+
+            <Button
+                android:id="@+id/practice_comfirm_button1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/remember_user"
+                android:layout_gravity="fill_vertical"
+                android:background="@drawable/android_big_button_x"
+                android:text="错题集"
+                android:textColor="#ff000000"
+                android:textSize="18.0sp" />
+
+            <Button
+                android:id="@+id/practice_comfirm_button1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/remember_user"
+                android:layout_gravity="fill_vertical"
+                android:background="@drawable/android_big_button_x"
+                android:text="章节练习"
+                android:textColor="#ff000000"
+                android:textSize="18.0sp" />
+
+              <Button
+                  android:id="@+id/practice_comfirm_button1"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:layout_below="@+id/remember_user"
+                  android:layout_gravity="fill_vertical"
+                  android:background="@drawable/android_big_button_x"
+                  android:text="继续练习"
+                  android:textColor="#ff000000"
+                  android:textSize="18.0sp" />
+
+                <Button
+                    android:id="@+id/practice_comfirm_button1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/remember_user"
+                    android:layout_gravity="fill_vertical"
+                    android:background="@drawable/android_big_button_x"
+                    android:text="随机练习"
+                    android:textColor="#ff000000"
+                    android:textSize="18.0sp" />
+
+ 		    </TableRow>
+ 		     <TableRow
+ 		    android:id="@+id/tableRow4"
+ 		    android:layout_weight="0"
+ 		    android:layout_width="fill_parent"
+ 		    android:layout_height="fill_parent"
+ 		    android:layout_gravity="center_horizontal"
+ 		    >
+
+            <Button
+                android:id="@+id/practice_comfirm_button1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/remember_user"
+                android:layout_gravity="fill_vertical"
+                android:background="@drawable/android_big_button_x"
+                android:text="模拟考试"
+                android:textColor="#ff000000"
+                android:textSize="18.0sp" />
+
+            <Button
+                android:id="@+id/practice_comfirm_button1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/remember_user"
+                android:layout_gravity="fill_vertical"
+                android:background="@drawable/android_big_button_x"
+                android:text="名师押题"
+                android:textColor="#ff000000"
+                android:textSize="18.0sp" />
+
+              <Button
+                  android:id="@+id/practice_comfirm_button1"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:layout_below="@+id/remember_user"
+                  android:layout_gravity="fill_vertical"
+                  android:background="@drawable/android_big_button_x"
+                  android:text="题目搜索"
+                  android:textColor="#ff000000"
+                  android:textSize="18.0sp" />
+
+                <Button
+                    android:id="@+id/practice_comfirm_button1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/remember_user"
+                    android:layout_gravity="fill_vertical"
+                    android:background="@drawable/android_big_button_x"
+                    android:text="更新题库"
+                    android:textColor="#ff000000"
+                    android:textSize="18.0sp" />
+
+ 		    </TableRow>
+ 		     <TableRow
+ 		    android:id="@+id/tableRow4"
+ 		    android:layout_weight="0"
+ 		    android:layout_width="fill_parent"
+ 		    android:layout_height="fill_parent"
+ 		    android:layout_gravity="center_horizontal"
+ 		    >
+
+            <Button
+                android:id="@+id/cube_table_button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/remember_user"
+                android:layout_gravity="fill_vertical"
+                android:background="@drawable/android_big_button_x"
+                android:text="舒而特表"
+                android:textColor="#ff000000"
+                android:textSize="18.0sp" />
+
+            <Button
+                android:id="@+id/practice_comfirm_button1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/remember_user"
+                android:layout_gravity="fill_vertical"
+                android:background="@drawable/android_big_button_x"
+                android:text="确定"
+                android:textColor="#ff000000"
+                android:textSize="18.0sp" />
+
+              <Button
+                  android:id="@+id/practice_comfirm_button1"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:layout_below="@+id/remember_user"
+                  android:layout_gravity="fill_vertical"
+                  android:background="@drawable/android_big_button_x"
+                  android:text="确定"
+                  android:textColor="#ff000000"
+                  android:textSize="18.0sp" />
+
+                <Button
+                    android:id="@+id/practice_comfirm_button1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/remember_user"
+                    android:layout_gravity="fill_vertical"
+                    android:background="@drawable/android_big_button_x"
+                    android:text="确定"
+                    android:textColor="#ff000000"
+                    android:textSize="18.0sp" />
+
+ 		    </TableRow>
+			    
+			</TableLayout>
+			    
+			</RelativeLayout>
+
+</RelativeLayout>

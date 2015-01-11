@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/practice_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffefebe7"
+    android:gravity="top" >
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginBottom="45dp"
+	    android:gravity="center_horizontal"
+	    android:orientation="vertical"
+	    android:padding="3dip" >
+
+	    <ScrollView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:scrollbars="none">    
+	        
+	     <TableLayout
+	         android:layout_width="fill_parent"
+	         android:layout_height="fill_parent"
+	         android:layout_gravity="fill_vertical"
+	         android:layout_margin="0.5dip"
+	         android:layout_weight="1"
+	         android:background="#ffcccccc" >
+    	  	
+    	  	<TableRow
+    	  	     android:id="@+id/tableRow1"
+		         android:layout_width="wrap_content"
+		         android:layout_height="fill_parent" >
+		         
+			    <TextView
+			        android:id="@+id/tvQuestion"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/black"
+			        android:textSize="9pt"
+			        android:text="【题目】：你有几个小三？\n" />
+		    </TableRow>	    
+		   	<View 
+	        android:layout_height="2dip" 
+	        android:background="#B5B5B5" />   
+    	  	<TableRow
+    	  	     android:id="@+id/tableRowChoiseA"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content" >
+			    <TextView
+			        android:id="@+id/tvChoiseA"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/black"
+			        android:textSize="9pt"
+			        android:text="A." 
+			        />
+		    </TableRow>
+		    <TableRow
+    	  	     android:id="@+id/tableRowChoiseB"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content" >
+			    <TextView
+			        android:id="@+id/tvChoiseB"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/black"
+			        android:textSize="9pt"
+			        android:text="B." 
+			        />
+		    </TableRow>
+		    <TableRow
+    	  	     android:id="@+id/tableRowChoiseC"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content" >
+			    <TextView
+			        android:id="@+id/tvChoiseC"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/black"
+			        android:textSize="9pt"
+			        android:text="C." 
+			        />
+		    </TableRow>
+		    <TableRow
+    	  	     android:id="@+id/tableRowChoiseD"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content" >
+			    <TextView
+			        android:id="@+id/tvChoiseD"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/black"
+			        android:textSize="9pt"
+			        android:text="D." 
+			        />
+		    </TableRow>
+		    
+   	  	   	<View 
+	        android:layout_height="2dip" 
+	        android:background="#B5B5B5" />
+    	  	 
+	    	<TableRow
+	    	    android:id="@+id/tableRow3"
+	    	    android:layout_width="wrap_content"
+	    	    android:layout_height="fill_parent"
+	    	    android:layout_gravity="fill_horizontal" >
+				
+	    	    <TextView
+		            android:id="@+id/textView3"
+		            android:layout_width="wrap_content"
+		            android:layout_height="fill_parent"
+		            android:layout_gravity="fill_horizontal"
+		            android:text="【单选】"
+		            android:textColor="@android:color/black"
+		            android:textSize="11pt" />
+	    	
+	 		</TableRow>
+	 		<TableRow
+				android:id="@+id/tableRow4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
+		    	<RadioGroup
+		    	    style="@color/black"
+		    	    android:id="@+id/rgAnswer"
+		    	    android:layout_width="wrap_content"
+		    	    android:layout_height="fill_parent"
+		    	    android:layout_gravity="fill_horizontal"
+		    	    android:orientation="horizontal" >
+			
+			            <RadioButton
+			                android:id="@+id/radioButton1"
+			                android:layout_width="wrap_content"
+			                android:layout_height="fill_parent"
+			                android:layout_gravity="center_horizontal"
+			                android:text="A"
+			                android:textColor="@android:color/black" />
+						<RadioButton
+			                android:id="@+id/radioButton2"
+			                android:layout_width="wrap_content"
+			                android:layout_height="fill_parent"
+			                android:textColor="@android:color/black"
+			                android:text="B" />
+			            <RadioButton
+			                android:id="@+id/radioButton3"
+			                android:layout_width="wrap_content"
+			                android:layout_height="fill_parent"
+			                android:textColor="@android:color/black"
+			                android:text="C" />
+			            <RadioButton
+			                android:id="@+id/radioButton4"
+			                android:layout_width="wrap_content"
+			                android:layout_height="fill_parent"
+			                android:textColor="@android:color/black"
+			                android:text="D" />
+			        </RadioGroup>
+	 		</TableRow>
+	 		
+	 		<View 
+		        android:layout_height="2dip" 
+		        android:background="#B5B5B5" />
+    	  	 
+    	  	<TableRow
+    	  	     android:id="@+id/tableRowReferenceAnswer"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content" >
+			    <TextView
+			        android:id="@+id/tvReferenceAnswer"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/black"
+			        android:textSize="9pt"
+			        android:text="【参考答案】"
+			        />
+		    </TableRow>
+		    
+    	  	<View 
+		        android:layout_height="2dip" 
+		        android:background="#B5B5B5" />
+    	  	
+  	  	 	<TableRow
+  	  	     android:id="@+id/tableRowAnalysisAnswer"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content" >
+		    <TextView
+	        android:id="@+id/tvAnalysisAnswer"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@android:color/black"
+	        android:textSize="9pt"
+	        android:text="【答案解析】"
+	        />
+		    </TableRow>
+		    
+  	  	 	<TableRow
+  	  	     android:id="@+id/tableRowAnalysisAnswer"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content" >
+		    <TextView
+	        android:id="@+id/tvAnalysisAnswer"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@android:color/black"
+	        android:textSize="9pt"
+	        android:text="【评论】"
+	        />
+		    </TableRow>
+	 		
+	 		</TableLayout>
+	 	</ScrollView>
+
+	</LinearLayout>
+	
+	
+	<RelativeLayout
+	    android:id="@+id/practice_view1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:background="#ffefebe7"
+	    android:gravity="fill_vertical" >
+	     
+		<TableLayout
+		    android:id="@+id/table4"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:padding="3dip"
+		    android:stretchColumns="*" >
+
+ 		<TableRow
+ 		    android:id="@+id/tableRow4"
+ 		    android:layout_width="wrap_content"
+ 		    android:layout_height="wrap_content"
+ 		    android:layout_gravity="center_horizontal"
+ 		    >
+	    	
+ 		     <Button
+ 		         android:id="@+id/practice_comfirm_button"
+ 		         android:layout_width="fill_parent"
+ 		         android:layout_height="wrap_content"
+ 		         android:layout_below="@+id/remember_user"
+ 		         android:layout_gravity="center_horizontal"
+ 		         android:background="@drawable/android_big_button_x"
+ 		         android:text="确定"
+ 		         android:textColor="#ff000000"
+ 		         android:textSize="18.0sp" />
+
+ 		      <Button
+ 		          android:id="@+id/practice_last_button"
+ 		          android:layout_width="fill_parent"
+ 		          android:layout_height="wrap_content"
+ 		          android:layout_below="@+id/remember_user"
+ 		          android:layout_gravity="center_horizontal"
+ 		          android:background="@drawable/android_big_button_x"
+ 		          android:text="计分"
+ 		          android:textColor="#ff000000"
+ 		          android:textSize="18.0sp" />
+
+ 		       <Button
+ 		           android:id="@+id/practice_next_button"
+ 		           android:layout_width="fill_parent"
+ 		           android:layout_height="wrap_content"
+ 		           android:layout_below="@+id/remember_user"
+ 		           android:layout_gravity="center_horizontal"
+ 		           android:background="@drawable/android_big_button_x"
+ 		           android:text="错题集"
+ 		           android:textColor="#ff000000"
+ 		           android:textSize="18.0sp" />
+ 		       
+ 		       <Button
+ 		           android:id="@+id/practice_next_button"
+ 		           android:layout_width="fill_parent"
+ 		           android:layout_height="wrap_content"
+ 		           android:layout_below="@+id/remember_user"
+ 		           android:layout_gravity="center_horizontal"
+ 		           android:background="@drawable/android_big_button_x"
+ 		           android:text="评论"
+ 		           android:textColor="#ff000000"
+ 		           android:textSize="20.0sp" />
+ 		        <Button
+ 		           android:id="@+id/btReferenceAnswer"
+ 		           android:onClick="true"
+ 		           android:layout_width="fill_parent"
+ 		           android:layout_height="wrap_content"
+ 		           android:layout_below="@+id/remember_user"
+ 		           android:layout_gravity="center_horizontal"
+ 		           android:background="@drawable/android_big_button_x"
+ 		           android:text="答案"
+ 		           android:textColor="#ff000000"
+ 		           android:textSize="18.0sp" />
+ 		    
+	    </TableRow>
+		</TableLayout>
+	</RelativeLayout>
+	
+</RelativeLayout>
+	

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#C1CDCD"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/btn_left"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_margin="5dp"
+        android:text="返回"
+        android:textColor="@android:color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:text="选择题"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_right"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_margin="5dp"
+        android:text="首页"
+        android:textColor="@android:color/black"
+        android:textSize="10sp" />
+
+</LinearLayout>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:app="http://schemas.android.com/apk/res/cube_table"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"    
+    android:layout_height="fill_parent"
+    >
+   
+   
+    <LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_weight="1"
+    >
+    <cube_table.myButton
+    android:id ="@+id/button1"
+    android:text="1"
+    style="@style/blueButton"
+    />  
+    <cube_table.myButton
+    android:id ="@+id/button2"
+    android:text="2" 
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button3"
+    android:text="3"   
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button4"
+    android:text="4"  
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button5"
+    android:text="5"  
+    style="@style/blueButton"
+    />    
+	</LinearLayout>
+	    <LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_weight="1"
+    >
+    <cube_table.myButton
+    android:id ="@+id/button6" 
+        android:text="6"
+    style="@style/blueButton"
+    />  
+    <cube_table.myButton
+    android:id ="@+id/button7"
+        android:text="7"     
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button8"
+        android:text="8"
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button9"
+        android:text="9"    
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button10"
+        android:text="10"    
+    style="@style/blueButton"
+    />    
+	</LinearLayout>
+	    <LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_weight="1"
+    >
+    <cube_table.myButton
+    android:id ="@+id/button11"
+        android:text="11" 
+    style="@style/blueButton"
+    />  
+    <cube_table.myButton
+    android:id ="@+id/button12"
+        android:text="12"     
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button13"
+        android:text="13"
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button14"
+        android:text="14"
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button15"
+        android:text="15"  
+    style="@style/blueButton"
+    />    
+	</LinearLayout>
+	    <LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_weight="1"
+    >
+    <cube_table.myButton
+    android:id ="@+id/button16"
+        android:text="16"   
+    style="@style/blueButton"
+    />  
+    <cube_table.myButton
+    android:id ="@+id/button17"
+        android:text="17" 
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button18"
+        android:text="18"  
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button19"
+        android:text="19"  
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button20"
+        android:text="20"  
+    style="@style/blueButton"
+    />    
+	</LinearLayout>
+	    <LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_weight="1"    	
+    >
+    <cube_table.myButton
+    android:id ="@+id/button21"
+	android:text="21"   
+    style="@style/blueButton"    
+    />              
+    <cube_table.myButton
+    android:id ="@+id/button22"
+        android:text="22"
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button23"
+        android:text="23"    
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button24"
+        android:text="24" 
+    style="@style/blueButton"
+    /> 
+    <cube_table.myButton
+    android:id ="@+id/button25"
+        android:text="25"   
+    style="@style/blueButton"
+    />    
+	</LinearLayout>
+</LinearLayout>

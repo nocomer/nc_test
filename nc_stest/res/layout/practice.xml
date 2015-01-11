@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/practice_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffefebe7"
+    android:gravity="fill_vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top_relative"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip" >
+
+    <ImageView
+        android:id="@+id/titleBg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#106184" />
+
+    <ImageView
+        android:id="@+id/progressImage"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:background="@drawable/android_title_bg_progress"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/titleRightButton"
+        style="\@style/title_right_button"
+        android:layout_width="100.0dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="5.0dip"
+        android:layout_marginTop="2.0dip"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="15sp"
+        android:padding="10.0dip"
+        android:text="练习"
+        android:textColor="@color/white"
+        android:singleLine="true" />
+
+	</RelativeLayout>
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginTop="50dp"
+	    android:gravity="center_horizontal"
+	    android:orientation="vertical"
+	    android:padding="3dip" >
+    
+	     <TableLayout
+	         android:layout_width="fill_parent"
+	         android:layout_height="fill_parent"
+	         android:layout_gravity="fill_vertical"
+	         android:layout_margin="0.5dip"
+	         android:layout_weight="1"
+	         android:background="#ffcccccc" >
+    	  	
+    	  	<TableRow
+    	  	     android:id="@+id/tableRow1"
+		         android:layout_width="wrap_content"
+		         android:layout_height="fill_parent" >
+			    <TextView
+			        android:id="@+id/textView1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/black"
+			        android:textSize="9pt"
+			        android:text="题目：你有几个小三？\n" />
+		    </TableRow>
+		    
+    	  	<TableRow
+    	  	     android:id="@+id/tableRow2"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content" >
+			    <TextView
+			        android:id="@+id/textView2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/black"
+			        android:textSize="9pt"
+			        android:text="A.一个 \nB.两个\nC.三个\nD.七个\n" 
+			        />
+		    </TableRow>
+		    
+    	  	 <View 
+		        android:layout_height="2dip" 
+		        android:background="#B5B5B5" /> 
+    	  	
+	    	<TableRow
+	    	    android:id="@+id/tableRow3"
+	    	    android:layout_width="wrap_content"
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_gravity="fill_horizontal" >
+				
+	    	    <TextView
+		            android:id="@+id/textView3"
+		            android:layout_width="wrap_content"
+		            android:layout_height="fill_parent"
+		            android:layout_gravity="fill_horizontal"
+		            android:text="单选:"
+		            android:textColor="@android:color/black"
+		            android:textSize="11pt" />
+	    	
+	 		</TableRow>
+	 		<TableRow
+				android:id="@+id/tableRow4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
+		    	<RadioGroup
+		    	    style="@color/black"
+		    	    android:layout_width="wrap_content"
+		    	    android:layout_height="fill_parent"
+		    	    android:layout_gravity="fill_horizontal"
+		    	    android:orientation="horizontal" >
+			
+			            <RadioButton
+			                android:id="@+id/radioButton1"
+			                android:layout_width="wrap_content"
+			                android:layout_height="fill_parent"
+			                android:layout_gravity="center_horizontal"
+			                android:text="A"
+			                android:textColor="@android:color/black" />
+						<RadioButton
+			                android:id="@+id/radioButton2"
+			                android:layout_width="wrap_content"
+			                android:layout_height="fill_parent"
+			                android:textColor="@android:color/black"
+			                android:text="B" />
+			            <RadioButton
+			                android:id="@+id/radioButton3"
+			                android:layout_width="wrap_content"
+			                android:layout_height="fill_parent"
+			                android:textColor="@android:color/black"
+			                android:text="C" />
+			            <RadioButton
+			                android:id="@+id/radioButton4"
+			                android:layout_width="wrap_content"
+			                android:layout_height="fill_parent"
+			                android:textColor="@android:color/black"
+			                android:text="D" />
+			        </RadioGroup>
+	 		</TableRow>
+	 		</TableLayout>
+	 		
+	 		<TableLayout
+			  android:id="@+id/table4"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:stretchColumns="*"
+			  android:padding="3dip"
+			  >
+		 		<TableRow
+		 		    android:id="@+id/tableRow4"
+		 		    android:layout_width="wrap_content"
+		 		    android:layout_height="wrap_content"
+		 		    android:layout_gravity="center_horizontal"
+		 		    >
+			    	
+		 		     <Button
+		 		         android:id="@+id/practice_comfirm_button"
+		 		         android:layout_width="match_parent"
+		 		         android:layout_height="fill_parent"
+		 		         android:layout_below="@+id/remember_user"
+		 		         android:layout_gravity="center_horizontal"
+		 		         android:background="@drawable/android_big_button_x"
+		 		         android:text="确定"
+		 		         android:textColor="#ff000000"
+		 		         android:textSize="20.0sp" />
+	
+		 		      <Button
+		 		          android:id="@+id/practice_last_button"
+		 		          android:layout_width="fill_parent"
+		 		          android:layout_height="fill_parent"
+		 		          android:layout_below="@+id/remember_user"
+		 		          android:layout_gravity="center_horizontal"
+		 		          android:background="@drawable/android_big_button_x"
+		 		          android:text="上一题"
+		 		          android:textColor="#ff000000"
+		 		          android:textSize="20.0sp" />
+	
+		 		       <Button
+		 		           android:id="@+id/practice_next_button"
+		 		           android:layout_width="fill_parent"
+		 		           android:layout_height="fill_parent"
+		 		           android:layout_below="@+id/remember_user"
+		 		           android:layout_gravity="center_horizontal"
+		 		           android:background="@drawable/android_big_button_x"
+		 		           android:text="下一题"
+		 		           android:textColor="#ff000000"
+		 		           android:textSize="20.0sp" />
+		 		       
+		 		       <Button
+		 		           android:id="@+id/practice_next_button"
+		 		           android:layout_width="fill_parent"
+		 		           android:layout_height="fill_parent"
+		 		           android:layout_below="@+id/remember_user"
+		 		           android:layout_gravity="center_horizontal"
+		 		           android:background="@drawable/android_big_button_x"
+		 		           android:text="考友"
+		 		           android:textColor="#ff000000"
+		 		           android:textSize="20.0sp" />
+		 		        <Button
+		 		           android:id="@+id/practice_next_button"
+		 		           android:layout_width="fill_parent"
+		 		           android:layout_height="fill_parent"
+		 		           android:layout_below="@+id/remember_user"
+		 		           android:layout_gravity="center_horizontal"
+		 		           android:background="@drawable/android_big_button_x"
+		 		           android:text="答案"
+		 		           android:textColor="#ff000000"
+		 		           android:textSize="20.0sp" />
+		 		    
+			    </TableRow>
+	 		</TableLayout>
+	 	
+	 	
+	</LinearLayout>
+
+</RelativeLayout>
+
