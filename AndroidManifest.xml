@@ -24,8 +24,8 @@
         <activity android:name="cn.com.jdsc.BuyActivity"/>
         <activity android:name="cn.com.jdsc.MoreActivity"/>
         
-        <activity android:name="cube_table.CubeTableActivity"/>
-      <activity android:name="nc_study.SimulationTestMainActivity"/>
+        <activity android:name="cube.table.CubeTableActivity"/>
+      <activity android:name="nc.study.SimulationTestMainActivity"/>
       <activity android:name="nc.lib.testActivity"/>
     </application>
 	

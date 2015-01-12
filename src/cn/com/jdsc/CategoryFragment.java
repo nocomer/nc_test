@@ -1,9 +1,9 @@
 package cn.com.jdsc;
 
 import nc.lib.*;
-import nc_study.ListViewActivity;
-import nc_study.ListViewAdapter;
-import nc_study.MyGridView;
+import nc.study.ListViewActivity;
+import nc.study.ListViewAdapter;
+import nc.study.MyGridView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,7 +36,7 @@ public class CategoryFragment extends Fragment {
 		String[][] child = { { "" }, { "" }, { "", "" } };
 
 		List<String> menu_toolbar_name_array = Arrays.asList("�洢��", "�ҵ�����",
-				"ͼ�鵼��", "ϵͳ����", "ϵͳ�ָ�", "���ȿ��", "������", "��������", "���ڿ���", "�˳�ϵͳ",
+				"ͼ�鵼��", "ϵͳ����", "ϵͳ�ָ�", "���ȿ��", "������", "��������", "���ڿ���", "�˳�ϵͳ",
 				"������", "��������", "���ڿ���", "�˳�ϵͳ", "���ڿ���", "�˳�ϵͳ", "���ڿ���", "�˳�ϵͳ",
 				"���ڿ���", "�˳�ϵͳ");
 

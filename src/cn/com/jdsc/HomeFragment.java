@@ -1,9 +1,9 @@
 package cn.com.jdsc;
 
-import cube_table.CubeTableActivity;
+import cube.table.CubeTableActivity;
 import cn.com.jdsc.R;
 import nc.lib.testActivity;
-import nc_study.SimulationTestMainActivity;
+import nc.study.SimulationTestMainActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

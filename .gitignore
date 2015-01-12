@@ -17,5 +17,6 @@ data/books
 data/images
 data/cache
 bin
+obj
 bin/*.apk
 bin/*.apk
