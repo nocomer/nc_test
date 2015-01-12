@@ -1,4 +1,4 @@
-package nc.lib;  
+﻿package nc.lib;  
   
 import cn.com.jdsc.R;
 import android.os.Bundle;  

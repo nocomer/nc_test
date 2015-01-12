@@ -1,4 +1,4 @@
-package nc.lib;
+﻿package nc.lib;
 
 import android.app.Activity;
 import android.app.Application;
@@ -30,11 +30,11 @@ public class HttpInter extends Application {
 		JSONArray jsonArray = null;
 		
 		if(bl_debug_mode){
-			//锟斤拷锟剿碉拷锟斤拷锟斤拷+锟斤拷锟斤拷锟接菜碉拷锟斤拷锟斤拷
+			//主菜单分类+二级子菜单分类
 			String json = "[" +
-							"{'MainMenu':'注锟结建锟斤拷师', 'SecondaryMenu':'一锟斤拷锟斤拷锟斤拷师锟斤拷锟'}," +
-							"{'MainMenu':'注锟结建锟斤拷师', 'SecondaryMenu':'一锟斤拷锟斤拷锟斤拷师锟斤拷锟斤拷'}," +
-							"{'MainMenu':'注锟斤拷锟斤拷师', 'SecondaryMenu':'锟叫硷拷锟斤拷锟绞'}" +
+							"{'MainMenu':'注册建造师', 'SecondaryMenu':'一级建造师机电'}," +
+							"{'MainMenu':'注册建造师', 'SecondaryMenu':'一级建造师市政'}," +
+							"{'MainMenu':'注册会计师', 'SecondaryMenu':'中级会计师'}" +
 						  "]";
 			try {
 				jsonArray = new JSONArray(json);
@@ -78,9 +78,9 @@ public class HttpInter extends Application {
 		
 		if(bl_debug_mode){
 			String str = "[" +
-					"{'Category':'注锟结建锟斤拷师', 'SecondaryCategory':'锟斤拷锟�,'Title':Title'},'Data':'Data'" +
-					"{'Category':'一锟斤拷锟斤拷锟斤拷师', 'SecondaryCategory':'锟斤拷锟斤拷'}," +
-					"{'Category':'锟斤拷锟斤拷锟斤拷源', 'SecondaryCategory':'XX'}" +
+					"{'Category':'注册建造师', 'SecondaryCategory':'机电','Title':Title'},'Data':'Data'" +
+					"{'Category':'一级建造师', 'SecondaryCategory':'市政'}," +
+					"{'Category':'人力资源', 'SecondaryCategory':'XX'}" +
 				  "]";
 			
 			try {

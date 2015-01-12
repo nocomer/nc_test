@@ -1,7 +1,7 @@
-package cn.com.jdsc;
+﻿package cn.com.jdsc;
 
 import cn.com.jdsc.R;
-import nc_study.SimulationTestMainActivity;
+import nc.study.SimulationTestMainActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

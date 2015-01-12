@@ -1,9 +1,9 @@
-package cn.com.jdsc;
+﻿package cn.com.jdsc;
 
 import nc.lib.*;
-import nc_study.ListViewActivity;
-import nc_study.ListViewAdapter;
-import nc_study.MyGridView;
+import nc.study.ListViewActivity;
+import nc.study.ListViewAdapter;
+import nc.study.MyGridView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,10 +35,10 @@ public class CategoryFragment extends Fragment {
 		ArrayList<String> groups = new ArrayList<String>();
 		String[][] child = { { "" }, { "" }, { "", "" } };
 
-		List<String> menu_toolbar_name_array = Arrays.asList("�洢��", "�ҵ�����",
-				"ͼ�鵼��", "ϵͳ����", "ϵͳ�ָ�", "���ȿ��", "������", "��������", "���ڿ���", "�˳�ϵͳ",
-				"������", "��������", "���ڿ���", "�˳�ϵͳ", "���ڿ���", "�˳�ϵͳ", "���ڿ���", "�˳�ϵͳ",
-				"���ڿ���", "�˳�ϵͳ");
+		List<String> menu_toolbar_name_array = Arrays.asList("存储卡", "我的下载",
+				"图书导入", "系统备份", "系统恢复", "清除全部", "在线升级", "快速入门", "关于开卷", "退出系统",
+				"在线升级", "快速入门", "关于开卷", "退出系统", "关于开卷", "退出系统", "关于开卷", "退出系统",
+				"关于开卷", "退出系统");
 
 		List<Integer> menu_toolbar_image_array = Arrays.asList(
 				R.drawable.icon_sdcard, R.drawable.icon_sdcard,
@@ -61,8 +61,7 @@ public class CategoryFragment extends Fragment {
 		// todo
 		HttpInter HttpInter = new HttpInter();
 		JSONArray jsonArray = HttpInter.getCategory();
-		
-		// NullPointer
+
 		if (jsonArray.length() > 0) {
 			for (int i = 0; i < jsonArray.length(); i++) {
 				JSONObject job = null;

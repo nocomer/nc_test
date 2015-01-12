@@ -1,7 +1,7 @@
-package cn.com.jdsc;
+ï»¿package cn.com.jdsc;
 
 import cn.com.jdsc.R;
-import nc_study.SimulationTestMainActivity;
+import nc.study.SimulationTestMainActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,9 +42,9 @@ public class LoginActivity extends Activity {
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
-		// ÉèÖÃtoastÏÔÊ¾µÄÎ»ÖÃ
+		// è®¾ç½®toastæ˜¾ç¤ºçš„ä½ç½®
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ÏÔÊ¾¸ÃToast
+		// æ˜¾ç¤ºè¯¥Toast
 		toast.show();
 	}
 }
