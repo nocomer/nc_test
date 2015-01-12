@@ -1,0 +1,21 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+[remote "origin"]
+	url = toplanxue@192.168.139.50:/home/nc/git_resp/nc_stest.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[alias]
+	pom = push origin master
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
