@@ -1,4 +1,4 @@
-package cube.table;
+﻿package cube.table;
 
 
 import android.content.Context;
@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-	// ��ݿ�汾
+	// 数据库版本
 	public static int dbVer = 1;
-	// ��ݿ����
+	// 数据库名称
 	public static String DB_NAME = "QBOX_DB";
 
 	public DatabaseHelper(Context context, String name, CursorFactory factory,
@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {						  		
 		String sql = "create table tops (mname varchar(10),mtime float)";
         db.execSQL(sql);
-        sql ="insert into tops (mname,mtime) VALUES ('����',19.60)";
+        sql ="insert into tops (mname,mtime) VALUES ('卡咔',19.60)";
         db.execSQL(sql);
 	}
 

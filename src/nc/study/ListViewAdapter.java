@@ -1,4 +1,4 @@
-package nc.study;
+﻿package nc.study;
 
 
 import java.util.ArrayList;
@@ -29,8 +29,8 @@ import android.widget.TextView;
 public class ListViewAdapter extends BaseExpandableListAdapter implements
 		OnItemClickListener
 {
-	public static final int ItemHeight = 48;// ÿ��ĸ߶�
-	public static final int PaddingLeft = 36;// ÿ��ĸ߶�
+	public static final int ItemHeight = 48;// 每项的高度
+	public static final int PaddingLeft = 36;// 每项的高度
 	private int myPaddingLeft = 0;
 
 	private MyGridView toolbarGrid;
@@ -82,7 +82,7 @@ public class ListViewAdapter extends BaseExpandableListAdapter implements
 		return treeNodes.get(groupPosition).childs.size();
 	}
 	
-	// �������ֻ�ȡ����
+	// 定义文字获取方法
 	static public TextView getTextView(Context context)
 	{
 		AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
@@ -95,7 +95,7 @@ public class ListViewAdapter extends BaseExpandableListAdapter implements
 		return textView;
 	}
 
-	//���Զ���ExpandableListView + GridView
+	//可自定义ExpandableListView + GridView
 	public View getChildView(int groupPosition, int childPosition,
 			boolean isLastChild, View convertView, ViewGroup parent)
 	{
@@ -108,11 +108,11 @@ public class ListViewAdapter extends BaseExpandableListAdapter implements
 			toolbarGrid = (MyGridView) convertView
 					.findViewById(R.id.GridView_toolbar);
 			
-			// ����ÿ������
+			// 设置每行列数
 			toolbarGrid.setNumColumns(4);
-			// λ�þ���
+			// 位置居中
 			toolbarGrid.setGravity(Gravity.CENTER);
-			// ˮƽ���
+			// 水平间隔
 			toolbarGrid.setHorizontalSpacing(10);
 			
 			// Set menu adapter
@@ -257,7 +257,7 @@ public class ListViewAdapter extends BaseExpandableListAdapter implements
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id)
 	{
-		Toast.makeText(parentContext, "��ǰѡ�е���:" + position, Toast.LENGTH_SHORT)
+		Toast.makeText(parentContext, "当前选中的是:" + position, Toast.LENGTH_SHORT)
 				.show();
 
 	}

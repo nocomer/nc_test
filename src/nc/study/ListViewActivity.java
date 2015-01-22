@@ -1,4 +1,4 @@
-package nc.study;
+﻿package nc.study;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class ListViewActivity extends Activity
 
 	ListViewAdapter treeViewAdapter;
 
-	public String[] groups = { "�б�1", "�б�2", "�б�3" };
+	public String[] groups = { "列表1", "列表2", "列表3" };
 
 	public String[][] child = { { "" }, { "" }, { "", "" } };
 

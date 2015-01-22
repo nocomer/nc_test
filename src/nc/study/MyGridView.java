@@ -1,4 +1,4 @@
-package nc.study;
+﻿package nc.study;
 
 import android.widget.GridView;
 
@@ -10,7 +10,7 @@ public class MyGridView extends GridView
 		super(context, attrs);
 	}
 
-	/* ���ò�����  */
+	/* 设置不滚动  */
 	public void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
 	{
 		int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,

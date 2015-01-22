@@ -18,5 +18,6 @@ data/images
 data/cache
 bin
 obj
+gen
 bin/*.apk
 bin/*.apk

@@ -1,4 +1,4 @@
-package cube.table;
+﻿package cube.table;
 
 import java.util.HashMap;
 import java.util.Timer;
@@ -21,15 +21,15 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.EditText;
 
-//��Ϸ����
+//游戏界面
 public class CubeTableActivity extends Activity {
-	// ��ʼ���ж�
+	// 开始键判断
 	private static String START_GAME = "GO";
-	// �����ֵ����
+	// 填充数值容器
 	private HashMap<Integer, String> mHashMap;
-	// ��䰴ť����
+	// 填充按钮容器
 	private HashMap<Integer, myButton> mList;
-	// �������ְ�ť
+	// 定义数字按钮
 	private myButton mButton1, mButton2, mButton3, mButton4, mButton5,
 			mButton6, mButton7, mButton8, mButton9, mButton10, mButton11,
 			mButton12, mButton13, mButton14, mButton15, mButton16, mButton17,
@@ -46,7 +46,7 @@ public class CubeTableActivity extends Activity {
 	private Timer myTime;
 	private boolean isChild = false;
 
-	// ��Ϣ����
+	// 消息处理
 	final Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
@@ -61,21 +61,21 @@ public class CubeTableActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tool_cube_table);
-		//ģʽ�ж�
+		//模式判定
 		isChild = getIntent().getBooleanExtra("isChild",false);
 		initButton();
 		initDB();	
 	}static{
 	   //AdManager.init("bef250a2bc952beb", "0bcd890f060f6154", 30, false,"1.0");  	    	
  }
-	//��ݿ���������ʼ��
+	//数据库操作对象初始化
 	private void initDB() {
 		if(dbHelper == null){
 		dbHelper = new DatabaseHelper(CubeTableActivity.this, DatabaseHelper.DB_NAME, null, DatabaseHelper.dbVer);
 		}		
 	}
 
-	// ��ʼ�����ְ�ť
+	// 初始化数字按钮
 	private void initButton() {
 		mList = new HashMap<Integer, myButton>();
 		mButton1 = (myButton) findViewById(R.id.button1);
@@ -130,23 +130,23 @@ public class CubeTableActivity extends Activity {
 		mList.put(24, mButton24);
 		mList.put(25, mButton25);
 
-		// ���ð�ť����
+		// 设置按钮监听
 		OnTouchListener mClick = new OnTouchListener() {
-			// ��ť����
+			// 按钮按下
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					myButton clickButton = (myButton) v;
 					String buttonValue = (String) clickButton.getText();
-					// ���ð�ť�߿���˸
+					// 设置按钮边框闪烁
 					clickButton.animateClickFeedback();
-					// ��ʼ��Ϸ
+					// 开始游戏
 					if (buttonValue.equals(START_GAME)) {
 						startGame();
 					} else {
-						// �ж��Ƿ�Ϊ���
+						// 判断是否为完成
 						if (checkNum(buttonValue,clickButton)) {							
-							String mScore = "��ʱ" + String.valueOf(mRecord)
-									+ "�룬���棿";
+							String mScore = "耗时" + String.valueOf(mRecord)
+									+ "秒，保存？";
 							Context mContext = CubeTableActivity.this;
 							LayoutInflater inflater = (LayoutInflater) mContext
 									.getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -156,23 +156,23 @@ public class CubeTableActivity extends Activity {
 									.findViewById(R.id.edtInput);
 							AlertDialog.Builder builder = new AlertDialog.Builder(
 									mContext);
-							// �ж��Ƿ�Ϊ�����¼
+							// 判断是否为保存记录
 							builder.setCancelable(true);
 							builder.setIcon(R.drawable.icon_sdcard);
 							builder.setTitle(mScore);
 							builder.setView(textEntryView);
-							builder.setPositiveButton("����",
+							builder.setPositiveButton("保存",
 									new DialogInterface.OnClickListener() {
 										public void onClick(
 												DialogInterface dialog,
 												int whichButton) {
-											//�����¼
+											//保存记录
 											markRecord(mRecord, edtInput
 													.getText().toString());
 											preStart();
 										}
 									});
-							builder.setNegativeButton("ȡ��",
+							builder.setNegativeButton("取消",
 									new DialogInterface.OnClickListener() {
 										public void onClick(
 												DialogInterface dialog,
@@ -212,7 +212,7 @@ public class CubeTableActivity extends Activity {
 	}
 	
 
-	// �ж���һ��
+	// 判断下一键
 	private Boolean checkNum(String strNum,myButton v) {
 		String mNum = String.valueOf(flagNum);
 		if (mNum.equals(strNum)) {
@@ -221,7 +221,7 @@ public class CubeTableActivity extends Activity {
 				v.changeColor();
 			}
 			if (flagNum == 25) {
-				// ��ʱ����
+				// 计时结束
 				myTime.cancel();
 				mRecord = mTime / 100;				
 				return true;
@@ -231,13 +231,13 @@ public class CubeTableActivity extends Activity {
 		return false;
 	}
 
-	// ���ÿ�ʼ
+	// 重置开始
 	private void preStart() {
 		mTime = 0;
 		flagNum = 1;
 		for (int i = 1; i <= mList.size(); i++) {
 			myButton mButton = mList.get(i);
-			//ģʽFLAG
+			//模式FLAG
 			mButton.mFlag = false;
 			if (i == 13) {
 				mButton.setText(START_GAME);
@@ -247,7 +247,7 @@ public class CubeTableActivity extends Activity {
 		}
 	}
 
-	// �ػ����ְ�ť
+	// 重绘数字按钮
 	private void reDrawUI() {
 		mHashMap = logicNum.getNumbers();
 		for (int i = 1; i <= mList.size(); i++) {
@@ -256,12 +256,12 @@ public class CubeTableActivity extends Activity {
 		}
 	}
 
-	// ��ʼ��Ϸ
+	// 开始游戏
 	private void startGame() {
 		mTime = 0;
 		flagNum = 1;
 		reDrawUI();
-		//��ʱ��		
+		//计时器		
 		myTime = new Timer(true);		
 		TimerTask task = new TimerTask() {
 			public void run() {

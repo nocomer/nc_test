@@ -2,12 +2,12 @@
 
 public class SimulationQuestionPaper {
 
-	public int id; // �Ծ�id
-	public int paper_serial; // �������к�
-	public String type; // �Ծ�����
-	public String name; // �Ծ����
-	public String user_answer; // �û��ش�
-	public int score; // ��׼��
+	public int id; // 试卷id
+	public int paper_serial; // 试题序列号
+	public String type; // 试卷类型
+	public String name; // 试卷名称
+	public String user_answer; // 用户回答
+	public int score; // 标准分
 
 	public SimulationQuestionPaper() {
 
@@ -48,12 +48,12 @@ public class SimulationQuestionPaper {
 
 class QuestionPaper {
 
-	public int id; 		//�Ծ���
-	public int paper_serial; // �������к�
-	public String type; // �Ծ�����
-	public String name; // �Ծ����
-	public String user_answer; // �û��ش�
-	public int score; // ��׼��
+	public int id; 		//试卷编号
+	public int paper_serial; // 试题序列号
+	public String type; // 试卷类型
+	public String name; // 试卷名称
+	public String user_answer; // 用户回答
+	public int score; // 标准分
 
 	public QuestionPaper() {
 
@@ -83,8 +83,8 @@ class RightOrWrong {
 	public String analysis_answer;
 	public int score;
 	public int ques_difficult;
-	public int question_num; //��Ŀ���
-	public int paper_id; //�Ծ���-���
+	public int question_num; //题目编号
+	public int paper_id; //试卷编号-外键
 
 	public RightOrWrong() {
 
@@ -114,8 +114,8 @@ class Filling {
 	public String analysis_answer;
 	public int score;
 	public int ques_difficult;
-	public int question_num; //��Ŀ���
-	public int paper_id; //�Ծ���
+	public int question_num; //题目编号
+	public int paper_id; //试卷编号
 	
 	public Filling() {
 
@@ -151,8 +151,8 @@ class SingleSel {
 	public String analysis_answer;
 	public int score;
 	public int ques_difficult;
-	public int question_num; //��Ŀ���
-	public int paper_id; //�Ծ���
+	public int question_num; //题目编号
+	public int paper_id; //试卷编号
 
 	public SingleSel() {
 
@@ -194,8 +194,8 @@ class MultiSel {
 	public String analysis_answer;
 	public int score;
 	public int ques_difficult;
-	public int question_num; //��Ŀ���
-	public int paper_id; //�Ծ���
+	public int question_num; //题目编号
+	public int paper_id; //试卷编号
 
 	public MultiSel() {
 
@@ -231,8 +231,8 @@ class EssayQuestion {
 	public String analysis_answer;
 	public int score;
 	public int ques_difficult;
-	public int question_num; //��Ŀ���
-	public int paper_id; //�Ծ���
+	public int question_num; //题目编号
+	public int paper_id; //试卷编号
 
 	public EssayQuestion() {
 

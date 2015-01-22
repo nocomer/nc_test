@@ -15,16 +15,16 @@ public class SimulationDBManager {
 
 	public SimulationDBManager(Context context) {
 		helper = new SimulationDBHelper(context);
-		// ��ΪgetWritableDatabase�ڲ�������mContext.openOrCreateDatabase(mName,
+		// 因为getWritableDatabase内部调用了mContext.openOrCreateDatabase(mName,
 		// 0,mFactory);
-		// ����Ҫȷ��context�ѳ�ʼ��,���ǿ��԰�ʵ��DBManager�Ĳ������Activity��onCreate��
+		// 所以要确保context已初始化,我们可以把实例化DBManager的步骤放在Activity的onCreate里
 		db = helper.getWritableDatabase();
 	}
 
 	public void addQuestionPaper(
 			List<SimulationQuestionPaper> SimulationQuestionPapers) {
 
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 			for (SimulationQuestionPaper SimulationQuestionPaper : SimulationQuestionPapers) {
 				db.execSQL("INSERT INTO QuestionPaper VALUES(null,?,?,?,?,?)",
@@ -34,10 +34,10 @@ public class SimulationDBManager {
 								SimulationQuestionPaper.user_answer,
 								SimulationQuestionPaper.score, });
 			}
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 
 	}
@@ -47,7 +47,7 @@ public class SimulationDBManager {
 			SimulationQuestionPaper SimulationQuestionPaper) {
 
 		int lastId = 0;
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 
 			db.execSQL("INSERT INTO QuestionPaper VALUES(null,?,?,?,?,?)",
@@ -66,16 +66,16 @@ public class SimulationDBManager {
 			}
 			c.close();
 
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 
 		return lastId;
 	}
 
 	public void addRightOrWrong(List<RightOrWrong> RightOrWrongs) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 			for (RightOrWrong RightOrWrong : RightOrWrongs) {
 				db.execSQL("INSERT INTO RightOrWrong VALUES(null,?,?,?,?,?)",
@@ -85,14 +85,14 @@ public class SimulationDBManager {
 								RightOrWrong.score,
 								RightOrWrong.ques_difficult, });
 			}
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void InsertOneRightOrWrong(int id, RightOrWrong RightOrWrong) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 
 			db.execSQL("INSERT INTO RightOrWrong VALUES(null,?,?,?,?,?,?,?,?)",
@@ -102,14 +102,14 @@ public class SimulationDBManager {
 							RightOrWrong.ques_difficult,
 							RightOrWrong.question_num, RightOrWrong.paper_id });
 
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void InsertOneFilling(int id, Filling Filling) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 
 			db.execSQL("INSERT INTO Filling VALUES(null,?,?,?,?,?,?,?,?)",
@@ -118,14 +118,14 @@ public class SimulationDBManager {
 							Filling.score, Filling.ques_difficult,
 							Filling.question_num, Filling.paper_id });
 
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void addFilling(List<Filling> Fillings) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 			for (Filling Filling : Fillings) {
 				db.execSQL("INSERT INTO Filling VALUES(null,?,?,?,?,?,?)",
@@ -133,14 +133,14 @@ public class SimulationDBManager {
 								Filling.reference_answer, Filling.score,
 								Filling.ques_difficult, });
 			}
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void InsertOneSingleSel(int id, SingleSel SingleSel) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 
 			db.execSQL(
@@ -153,14 +153,14 @@ public class SimulationDBManager {
 							SingleSel.ques_difficult, SingleSel.question_num,
 							SingleSel.paper_id });
 
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void addSingleSel(List<SingleSel> SingleSels) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 			for (SingleSel SingleSel : SingleSels) {
 				db.execSQL(
@@ -171,14 +171,14 @@ public class SimulationDBManager {
 								SingleSel.reference_answer, SingleSel.score,
 								SingleSel.ques_difficult, });
 			}
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void InsertOneMultiSel(int id, MultiSel MultiSel) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 
 			db.execSQL(
@@ -191,14 +191,14 @@ public class SimulationDBManager {
 							MultiSel.ques_difficult, MultiSel.question_num,
 							MultiSel.paper_id });
 
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void addMultiSel(List<MultiSel> MultiSels) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 			for (MultiSel MultiSel : MultiSels) {
 				db.execSQL(
@@ -209,14 +209,14 @@ public class SimulationDBManager {
 								MultiSel.choiseE, MultiSel.reference_answer,
 								MultiSel.score, MultiSel.ques_difficult, });
 			}
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void InsertOneEssayQuestion(int id, EssayQuestion EssayQuestion) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 
 			db.execSQL(
@@ -227,14 +227,14 @@ public class SimulationDBManager {
 							EssayQuestion.ques_difficult,
 							EssayQuestion.question_num, EssayQuestion.paper_id });
 
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void addEssayQuestion(List<EssayQuestion> EssayQuestions) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 			for (EssayQuestion EssayQuestion : EssayQuestions) {
 				db.execSQL("INSERT INTO EssayQuestion VALUES(null,?,?,?,?,?)",
@@ -244,19 +244,19 @@ public class SimulationDBManager {
 								EssayQuestion.score,
 								EssayQuestion.ques_difficult, });
 			}
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
 	public void execSqlite(String sql) {
-		db.beginTransaction(); // ��ʼ����
+		db.beginTransaction(); // 开始事务
 		try {
 			db.execSQL(sql);
-			db.setTransactionSuccessful(); // ��������ɹ����
+			db.setTransactionSuccessful(); // 设置事务成功完成
 		} finally {
-			db.endTransaction(); // ��������
+			db.endTransaction(); // 结束事务
 		}
 	}
 
@@ -316,7 +316,7 @@ public class SimulationDBManager {
 		return SimulationQuestionPapers;
 	}
 
-	// ����id�����Ծ�
+	// 按试id查找试卷
 	public SimulationQuestionPaper query_questionpaper_by_id(int id) {
 		SimulationQuestionPaper SimulationQuestionPaper = null;
 		Cursor c = db.rawQuery("SELECT * FROM QuestionPaper where id = " + id,
@@ -337,7 +337,7 @@ public class SimulationDBManager {
 		return SimulationQuestionPaper;
 	}
 
-	// ���Ծ�������Ծ�
+	// 按试卷名查找试卷
 	public SimulationQuestionPaper query_questionpaper_by_name(String name) {
 		SimulationQuestionPaper SimulationQuestionPaper = null;
 		Cursor c = db.rawQuery("SELECT * FROM QuestionPaper where name = "
@@ -358,7 +358,7 @@ public class SimulationDBManager {
 		return SimulationQuestionPaper;
 	}
 
-	// ���Ծ�������Ծ�
+	// 按试卷名查找试卷
 	public SimulationQuestionPaper query_questionpaper_by_like_name(String name) {
 		SimulationQuestionPaper SimulationQuestionPaper = null;
 		Cursor c = db.rawQuery("SELECT * FROM QuestionPaper where name like "
@@ -379,7 +379,7 @@ public class SimulationDBManager {
 		return SimulationQuestionPaper;
 	}
 
-	// �����Ŀ��Ų��ж���
+	// 根据题目编号查判断题
 	public List<RightOrWrong> query_right_or_wrong_by_paper_id(int paper_id) {
 
 		ArrayList<RightOrWrong> RightOrWrongs = new ArrayList<RightOrWrong>();
@@ -539,38 +539,38 @@ public class SimulationDBManager {
 
 	public void init_create_tables() {
 
-		// �Ծ��-> �Ծ�id,�Ծ��ţ���Ŀ��ţ��Ծ����ͣ��Ծ���ƣ��û��𰸣���׼�𰸣��ɼ����û�ѡ��Ѷ�
+		// 试卷表-> 试卷id,试卷编号，题目编号，试卷类型，试卷名称，用户答案，标准答案，成绩，用户选项，难度
 		String qp_sql = "CREATE TABLE if not exists QuestionPaper(id INTEGER PRIMARY KEY AUTOINCREMENT,paper_serial INT KEY NOT NULL,type TEXT  NOT NULL,"
 				+ "name TEXT  NOT NULL,user_answer TEXT,score int)";
 
 		execSqlite(qp_sql);
 
-		// �ж���
+		// 判断题
 		String rw_sql = "CREATE TABLE if not exists RightOrWrong(id INTEGER PRIMARY KEY AUTOINCREMENT,type TEXT  NOT NULL,question TEXT  NOT NULL,"
 				+ "reference_answer TEXT  NOT NULL,analysis_answer TEXT,score int,ques_difficult int,question_num int  NOT NULL,paper_id int NOT NULL)";
 
 		execSqlite(rw_sql);
 
-		// �����
+		// 填空题
 		String filling_sql = "CREATE TABLE if not exists Filling(id INTEGER PRIMARY KEY AUTOINCREMENT,type TEXT  NOT NULL,question TEXT  NOT NULL,"
 				+ "reference_answer TEXT  NOT NULL,analysis_answer TEXT,score int,ques_difficult int,question_num int  NOT NULL,paper_id int NOT NULL)";
 
 		execSqlite(filling_sql);
 
-		// ��ѡ��
+		// 单选题
 		String sq_sql = "CREATE TABLE if not exists SingleSel(id INTEGER PRIMARY KEY AUTOINCREMENT,type TEXT  NOT NULL,question TEXT  NOT NULL,"
 				+ "choiseA TEXT  NOT NULL,choiseB TEXT  NOT NULL,choiseC TEXT  NOT NULL,choiseD TEXT  NOT NULL,"
 				+ "reference_answer TEXT  NOT NULL,analysis_answer TEXT,score int,ques_difficult int,question_num int  NOT NULL,paper_id int NOT NULL)";
 		execSqlite(sq_sql);
 
-		// ��ѡ��
+		// 多选题
 		String mq_sql = "CREATE TABLE if not exists MultiSel(id INTEGER PRIMARY KEY AUTOINCREMENT,type TEXT  NOT NULL,question TEXT  NOT NULL,"
 				+ "choiseA TEXT  NOT NULL,choiseB TEXT  NOT NULL,choiseC TEXT  NOT NULL,choiseD TEXT  NOT NULL,choiseE TEXT  NOT NULL,"
 				+ "reference_answer TEXT  NOT NULL,analysis_answer TEXT,score int,ques_difficult int,question_num int  NOT NULL,paper_id int NOT NULL)";
 
 		execSqlite(mq_sql);
 
-		// �ʴ���
+		// 问答题
 		String eq_sql = "CREATE TABLE if not exists EssayQuestion(id INTEGER PRIMARY KEY AUTOINCREMENT,type TEXT  NOT NULL,question TEXT  NOT NULL,"
 				+ "reference_answer TEXT  NOT NULL,analysis_answer TEXT,score int,ques_difficult int,question_num int  NOT NULL,paper_id int NOT NULL)";
 
@@ -578,7 +578,7 @@ public class SimulationDBManager {
 	}
 
 	public void init_recreate_db() {
-		// ����ձ�
+		// 先清空表
 		init_drop_tables();
 		init_create_tables();
 		init_insert_data();
@@ -587,19 +587,19 @@ public class SimulationDBManager {
 
 	public void init_insert_data1() {
 
-		// �Ծ��
+		// 试卷表
 		List<SimulationQuestionPaper> SimulationQuestionPapers = new ArrayList<SimulationQuestionPaper>();
 
 		SimulationQuestionPaper SimulationQuestionPaper1 = new SimulationQuestionPaper(
-				1, 1, "һ�����09������", "09������", "�û���1", 100);
+				1, 1, "一建机电09年真题", "09年真题", "用户答案1", 100);
 		SimulationQuestionPaper SimulationQuestionPaper2 = new SimulationQuestionPaper(
-				2, 2, "һ�����09������", "10������", "�û���2", 100);
+				2, 2, "一建机电09年真题", "10年真题", "用户答案2", 100);
 		SimulationQuestionPaper SimulationQuestionPaper3 = new SimulationQuestionPaper(
-				3, 3, "һ�����09������", "11������", "�û���3", 100);
+				3, 3, "一建机电09年真题", "11年真题", "用户答案3", 100);
 		SimulationQuestionPaper SimulationQuestionPaper4 = new SimulationQuestionPaper(
-				4, 4, "һ�����09������", "12������", "�û���4", 100);
+				4, 4, "一建机电09年真题", "12年真题", "用户答案4", 100);
 		SimulationQuestionPaper SimulationQuestionPaper5 = new SimulationQuestionPaper(
-				5, 5, "һ�����09������", "13������", "�û���5", 100);
+				5, 5, "一建机电09年真题", "13年真题", "用户答案5", 100);
 
 		SimulationQuestionPapers.add(SimulationQuestionPaper1);
 		SimulationQuestionPapers.add(SimulationQuestionPaper2);
@@ -611,17 +611,17 @@ public class SimulationDBManager {
 
 		List<RightOrWrong> RightOrWrongs = new ArrayList<RightOrWrong>();
 
-		RightOrWrong RightOrWrong1 = new RightOrWrong(1, "һ�����09������", "����1",
-				"�ο���1", "����", 40, 1, 1, 1);
+		RightOrWrong RightOrWrong1 = new RightOrWrong(1, "一建机电09年真题", "问题1",
+				"参考答案1", "解析", 40, 1, 1, 1);
 
-		RightOrWrong RightOrWrong2 = new RightOrWrong(2, "һ�����10������", "����2",
-				"�ο���2", "����", 40, 1, 1, 1);
-		RightOrWrong RightOrWrong3 = new RightOrWrong(3, "һ�����11������", "����3",
-				"�ο���3", "����", 40, 1, 1, 1);
-		RightOrWrong RightOrWrong4 = new RightOrWrong(4, "һ�����12������", "����4",
-				"�ο���4", "����", 40, 1, 1, 1);
-		RightOrWrong RightOrWrong5 = new RightOrWrong(5, "һ�����13������", "����5",
-				"�ο���5", "����", 40, 1, 1, 1);
+		RightOrWrong RightOrWrong2 = new RightOrWrong(2, "一建机电10年真题", "问题2",
+				"参考答案2", "解析", 40, 1, 1, 1);
+		RightOrWrong RightOrWrong3 = new RightOrWrong(3, "一建机电11年真题", "问题3",
+				"参考答案3", "解析", 40, 1, 1, 1);
+		RightOrWrong RightOrWrong4 = new RightOrWrong(4, "一建机电12年真题", "问题4",
+				"参考答案4", "解析", 40, 1, 1, 1);
+		RightOrWrong RightOrWrong5 = new RightOrWrong(5, "一建机电13年真题", "问题5",
+				"参考答案5", "解析", 40, 1, 1, 1);
 
 		RightOrWrongs.add(RightOrWrong1);
 		RightOrWrongs.add(RightOrWrong2);
@@ -631,18 +631,18 @@ public class SimulationDBManager {
 
 		addRightOrWrong(RightOrWrongs);
 
-		// �����
+		// 填空题
 		List<Filling> Fillings = new ArrayList<Filling>();
 
-		Filling Filling1 = new Filling(1, "һ�����09������", "����1", "�ο���1", "����",
+		Filling Filling1 = new Filling(1, "一建机电09年真题", "问题1", "参考答案1", "解析",
 				40, 1, 1, 1);
-		Filling Filling2 = new Filling(2, "һ�����10������", "����2", "�ο���2", "����",
+		Filling Filling2 = new Filling(2, "一建机电10年真题", "问题2", "参考答案2", "解析",
 				40, 1, 1, 1);
-		Filling Filling3 = new Filling(3, "һ�����11������", "����3", "�ο���3", "����",
+		Filling Filling3 = new Filling(3, "一建机电11年真题", "问题3", "参考答案3", "解析",
 				40, 1, 1, 1);
-		Filling Filling4 = new Filling(4, "һ�����12������", "����4", "�ο���4", "����",
+		Filling Filling4 = new Filling(4, "一建机电12年真题", "问题4", "参考答案4", "解析",
 				40, 1, 1, 1);
-		Filling Filling5 = new Filling(5, "һ�����13������", "����5", "�ο���5", "����",
+		Filling Filling5 = new Filling(5, "一建机电13年真题", "问题5", "参考答案5", "解析",
 				40, 1, 1, 1);
 
 		Fillings.add(Filling1);
@@ -653,19 +653,19 @@ public class SimulationDBManager {
 
 		addFilling(Fillings);
 
-		// ��ѡ��
+		// 单选题
 		List<SingleSel> SingleSels = new ArrayList<SingleSel>();
 
-		SingleSel SingleSel = new SingleSel(1, "һ�����09������", "����1", "ѡ��A",
-				"ѡ��B", "ѡ��C", "ѡ��D", "�ο���1", "����", 40, 1, 1, 1);
-		SingleSel SingleSe2 = new SingleSel(2, "һ�����10������", "����2", "ѡ��A",
-				"ѡ��B", "ѡ��C", "ѡ��D", "�ο���2", "����", 40, 1, 1, 1);
-		SingleSel SingleSe3 = new SingleSel(3, "һ�����11������", "����3", "ѡ��A",
-				"ѡ��B", "ѡ��C", "ѡ��D", "�ο���3", "����", 40, 1, 1, 1);
-		SingleSel SingleSe4 = new SingleSel(4, "һ�����12������", "����4", "ѡ��A",
-				"ѡ��B", "ѡ��C", "ѡ��D", "�ο���4", "����", 40, 1, 1, 1);
-		SingleSel SingleSe5 = new SingleSel(5, "һ�����13������", "����5", "ѡ��A",
-				"ѡ��B", "ѡ��C", "ѡ��D", "�ο���5", "����", 40, 1, 1, 1);
+		SingleSel SingleSel = new SingleSel(1, "一建机电09年真题", "问题1", "选项A",
+				"选项B", "选项C", "选项D", "参考答案1", "解析", 40, 1, 1, 1);
+		SingleSel SingleSe2 = new SingleSel(2, "一建机电10年真题", "问题2", "选项A",
+				"选项B", "选项C", "选项D", "参考答案2", "解析", 40, 1, 1, 1);
+		SingleSel SingleSe3 = new SingleSel(3, "一建机电11年真题", "问题3", "选项A",
+				"选项B", "选项C", "选项D", "参考答案3", "解析", 40, 1, 1, 1);
+		SingleSel SingleSe4 = new SingleSel(4, "一建机电12年真题", "问题4", "选项A",
+				"选项B", "选项C", "选项D", "参考答案4", "解析", 40, 1, 1, 1);
+		SingleSel SingleSe5 = new SingleSel(5, "一建机电13年真题", "问题5", "选项A",
+				"选项B", "选项C", "选项D", "参考答案5", "解析", 40, 1, 1, 1);
 
 		SingleSels.add(SingleSel);
 		SingleSels.add(SingleSe2);
@@ -675,19 +675,19 @@ public class SimulationDBManager {
 
 		addSingleSel(SingleSels);
 
-		// ��ѡ��
+		// 多选题
 		List<MultiSel> MultiSels = new ArrayList<MultiSel>();
 
-		MultiSel MultiSel = new MultiSel(1, "һ�����09������", "����1", "ѡ��A", "ѡ��B",
-				"ѡ��C", "ѡ��D", "ѡ��E", "�ο���1", "����", 40, 1, 1, 1);
-		MultiSel MultiSe2 = new MultiSel(2, "һ�����10������", "����2", "ѡ��A", "ѡ��B",
-				"ѡ��C", "ѡ��D", "ѡ��E", "�ο���2", "����", 40, 1, 1, 1);
-		MultiSel MultiSe3 = new MultiSel(3, "һ�����11������", "����3", "ѡ��A", "ѡ��B",
-				"ѡ��C", "ѡ��D", "ѡ��E", "�ο���3", "����", 40, 1, 1, 1);
-		MultiSel MultiSe4 = new MultiSel(4, "һ�����12������", "����4", "ѡ��A", "ѡ��B",
-				"ѡ��C", "ѡ��D", "ѡ��E", "�ο���4", "����", 40, 1, 1, 1);
-		MultiSel MultiSe5 = new MultiSel(5, "һ�����13������", "����5", "ѡ��A", "ѡ��B",
-				"ѡ��C", "ѡ��D", "ѡ��E", "�ο���5", "����", 40, 1, 1, 1);
+		MultiSel MultiSel = new MultiSel(1, "一建机电09年真题", "问题1", "选项A", "选项B",
+				"选项C", "选项D", "选项E", "参考答案1", "解析", 40, 1, 1, 1);
+		MultiSel MultiSe2 = new MultiSel(2, "一建机电10年真题", "问题2", "选项A", "选项B",
+				"选项C", "选项D", "选项E", "参考答案2", "解析", 40, 1, 1, 1);
+		MultiSel MultiSe3 = new MultiSel(3, "一建机电11年真题", "问题3", "选项A", "选项B",
+				"选项C", "选项D", "选项E", "参考答案3", "解析", 40, 1, 1, 1);
+		MultiSel MultiSe4 = new MultiSel(4, "一建机电12年真题", "问题4", "选项A", "选项B",
+				"选项C", "选项D", "选项E", "参考答案4", "解析", 40, 1, 1, 1);
+		MultiSel MultiSe5 = new MultiSel(5, "一建机电13年真题", "问题5", "选项A", "选项B",
+				"选项C", "选项D", "选项E", "参考答案5", "解析", 40, 1, 1, 1);
 
 		MultiSels.add(MultiSel);
 		MultiSels.add(MultiSe2);
@@ -697,19 +697,19 @@ public class SimulationDBManager {
 
 		addMultiSel(MultiSels);
 
-		// ������
+		// 案例题
 		List<EssayQuestion> EssayQuestions = new ArrayList<EssayQuestion>();
 
-		EssayQuestion EssayQuestion1 = new EssayQuestion(1, "һ�����09������", "����1",
-				"�ο���1", "����", 40, 1, 1, 1);
-		EssayQuestion EssayQuestion2 = new EssayQuestion(2, "һ�����10������", "����2",
-				"�ο���2", "����", 40, 1, 1, 1);
-		EssayQuestion EssayQuestion3 = new EssayQuestion(3, "һ�����11������", "����3",
-				"�ο���3", "����", 40, 1, 1, 1);
-		EssayQuestion EssayQuestion4 = new EssayQuestion(4, "һ�����12������", "����4",
-				"�ο���4", "����", 40, 1, 1, 1);
-		EssayQuestion EssayQuestion5 = new EssayQuestion(5, "һ�����13������", "����5",
-				"�ο���5", "����", 40, 1, 1, 1);
+		EssayQuestion EssayQuestion1 = new EssayQuestion(1, "一建机电09年真题", "问题1",
+				"参考答案1", "解析", 40, 1, 1, 1);
+		EssayQuestion EssayQuestion2 = new EssayQuestion(2, "一建机电10年真题", "问题2",
+				"参考答案2", "解析", 40, 1, 1, 1);
+		EssayQuestion EssayQuestion3 = new EssayQuestion(3, "一建机电11年真题", "问题3",
+				"参考答案3", "解析", 40, 1, 1, 1);
+		EssayQuestion EssayQuestion4 = new EssayQuestion(4, "一建机电12年真题", "问题4",
+				"参考答案4", "解析", 40, 1, 1, 1);
+		EssayQuestion EssayQuestion5 = new EssayQuestion(5, "一建机电13年真题", "问题5",
+				"参考答案5", "解析", 40, 1, 1, 1);
 
 		EssayQuestions.add(EssayQuestion1);
 		EssayQuestions.add(EssayQuestion2);
@@ -723,30 +723,30 @@ public class SimulationDBManager {
 
 	public void init_insert_data() {
 
-		// �Ծ�� example: һ���Ծ� = 40ѡ���� + 20��ѡ�� + 5������
+		// 试卷表 example: 一张试卷 = 40选题题 + 20多选题 + 5案例题
 		SimulationQuestionPaper SimulationQuestionPaper = new SimulationQuestionPaper(
-				1, 1, "һ�����09������", "09������", "�û���1", 100);
+				1, 1, "一建机电09年真题", "09年真题", "用户答案1", 100);
 		int lastId = InsertOneQuestionPaper(SimulationQuestionPaper);
 
 		Log.v("lastId", String.valueOf(lastId));
 
-		// �ж��� 10 ��
+		// 判断题 10 道
 		for (int n = 0; n < 10; n++) {
-			RightOrWrong RightOrWrong = new RightOrWrong(lastId, "һ�����09������",
-					"����" + (n + 1), "�ο���" + (n + 1), "����" + (n + 1), 40, 1,
+			RightOrWrong RightOrWrong = new RightOrWrong(lastId, "一建机电09年真题",
+					"问题" + (n + 1), "参考答案" + (n + 1), "解析" + (n + 1), 40, 1,
 					n + 1, lastId);
 
 			InsertOneRightOrWrong(lastId, RightOrWrong);
 		}
 
-		// �����
+		// 填空题
 		for (int n = 0; n < 5; n++) {
-			Filling Filling = new Filling(lastId, "һ�����09������", "����" + (n + 1),
-					"�ο���" + (n + 1), "����" + (n + 1), 40, 1, n + 1, lastId);
+			Filling Filling = new Filling(lastId, "一建机电09年真题", "问题" + (n + 1),
+					"参考答案" + (n + 1), "解析" + (n + 1), 40, 1, n + 1, lastId);
 			InsertOneFilling(lastId, Filling);
 		}
 
-		// ��ѡ��
+		// 单选题
 		for (int n = 0; n < 40; n++) {
 
 			String reference_answer = "A";
@@ -759,24 +759,24 @@ public class SimulationDBManager {
 			if (n % 4 == 4)
 				reference_answer = "D";
 
-			SingleSel SingleSel = new SingleSel(lastId, "һ�����09������", "����"
-					+ (n + 1), "ѡ��A", "ѡ��B", "ѡ��C", "ѡ��D", reference_answer
-					+ (n + 1), "����" + (n + 1), 40, 1, n + 1, lastId);
+			SingleSel SingleSel = new SingleSel(lastId, "一建机电09年真题", "问题"
+					+ (n + 1), "选项A", "选项B", "选项C", "选项D", reference_answer
+					+ (n + 1), "解析" + (n + 1), 40, 1, n + 1, lastId);
 			InsertOneSingleSel(lastId, SingleSel);
 		}
 
-		// ��ѡ��
+		// 多选题
 		for (int n = 0; n < 20; n++) {
-			MultiSel MultiSel = new MultiSel(lastId, "һ�����09������", "����"
-					+ (n + 1), "ѡ��A", "ѡ��B", "ѡ��C", "ѡ��D", "ѡ��E", "�ο���"
-					+ (n + 1), "����" + (n + 1), 40, 1, n + 1, lastId);
+			MultiSel MultiSel = new MultiSel(lastId, "一建机电09年真题", "问题"
+					+ (n + 1), "选项A", "选项B", "选项C", "选项D", "选项E", "参考答案"
+					+ (n + 1), "解析" + (n + 1), 40, 1, n + 1, lastId);
 			InsertOneMultiSel(lastId, MultiSel);
 		}
 
-		// ������
+		// 案例题
 		for (int n = 0; n < 5; n++) {
 			EssayQuestion EssayQuestion = new EssayQuestion(lastId,
-					"һ�����09������", "����" + (n + 1), "�ο���" + (n + 1), "����"
+					"一建机电09年真题", "问题" + (n + 1), "参考答案" + (n + 1), "解析"
 							+ (n + 1), 40, 1, n + 1, lastId);
 			InsertOneEssayQuestion(lastId, EssayQuestion);
 		}

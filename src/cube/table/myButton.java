@@ -1,4 +1,4 @@
-package cube.table;
+﻿package cube.table;
 
 
 import cn.com.jdsc.R;
@@ -12,7 +12,7 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.widget.Button;
 
-//�Զ��尴ť
+//自定义按钮
 public class myButton extends Button {
 
 	static final int CLICK_FEEDBACK_DURATION = 350;
@@ -38,7 +38,7 @@ public class myButton extends Button {
 		mAnimStart = -1;
 	}
 
-	//�߿����
+	//边框绘制
 	private void drawMagicFlame(int duration, Canvas paramCanvas) {
 		int alpha = 255 - duration * 255 / CLICK_FEEDBACK_DURATION;
 		int color = CLICK_FEEDBACK_COLOR | (alpha << 24);
@@ -52,7 +52,7 @@ public class myButton extends Button {
 		mFlag = true;
 	}
 
-	// ��ִ�Զ��尴ť
+	// 回执自定义按钮
 	protected void onDraw(Canvas canvas) {
 		if (mAnimStart != -1) {
 			int animDuration = (int) (System.currentTimeMillis() - mAnimStart);
@@ -75,11 +75,11 @@ public class myButton extends Button {
 		canvas.drawText(text, 0, text.length(), mTextX, mTextY,getPaint());
 	}
 
-	//�ַ����λ�û�ȡ
+	//字符坐标位置获取
 	private void measureText() {
 		String str = getText().toString();
 		TextPaint mTextPaint = getPaint();
-		mTextPaint.setColor(R.color.crimson);
+		//mTextPaint.setColor(R.color.crimson);
 		mTextX = (getWidth() - mTextPaint.measureText(str)) / 2;
 		mTextY = (getHeight() - mTextPaint.ascent() - mTextPaint.descent()) / 2;
 	}

@@ -1,8 +1,8 @@
-package cube.table;
+﻿package cube.table;
 
 import java.util.HashMap;
 
-//������25������
+//随机产生25个数字
 public class logicNum {
 
 	public static HashMap<Integer, String> getNumbers() {

@@ -1,4 +1,4 @@
-package nc.study;
+﻿package nc.study;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class SimulationTestMainActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.simulation_fragment_main);
-		/* �����ޱ����� */
+		/* 设置无标题栏 */
 		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		pageViewList = new ArrayList<View>();
@@ -66,7 +66,7 @@ public class SimulationTestMainActivity extends FragmentActivity {
 		List<EssayQuestion> EssayQuestions = db
 				.query_essayquestion_by_paper_id(QuestionPaper01.id);
 
-		// ������ѡ�ⴰ��
+		// 建立单选题窗口
 		int SingleSelsNum = SingleSels.size();
 
 		for (int n = 0; n < SingleSelsNum; n++) {
@@ -74,14 +74,14 @@ public class SimulationTestMainActivity extends FragmentActivity {
 
 			SimulationSingleSelFragment s = new SimulationSingleSelFragment();
 			fragmentList.add(s);
-			titleList.add("��"+(n + 1) + "��");
+			titleList.add("【"+(n + 1) + "】");
 			s.setQuestion(SingleSel.question);
 			s.setChoiseA(SingleSel.choiseA);
 			s.setChoiseB(SingleSel.choiseB);
 			s.setChoiseC(SingleSel.choiseC);
 			s.setChoiseD(SingleSel.choiseD);
-			s.setReferenceAnswer("���ο��𰸡�" + SingleSel.reference_answer);
-			s.setAnalysisAnswer("���𰸽����� " + SingleSel.analysis_answer);
+			s.setReferenceAnswer("【参考答案】" + SingleSel.reference_answer);
+			s.setAnalysisAnswer("【答案解析】 " + SingleSel.analysis_answer);
 		}
 
 		/*
@@ -117,14 +117,14 @@ public class SimulationTestMainActivity extends FragmentActivity {
 
 	public void db_update(View view) {
 		QuestionPaper QuestionPaper = new QuestionPaper();
-		QuestionPaper.name = "һ�����05������";
-		QuestionPaper.name = "һ�����2015������";
+		QuestionPaper.name = "一建机电05年真题";
+		QuestionPaper.name = "一建机电2015年真题";
 		// db.updateAge(QuestionPaper);
 	}
 
 	public void db_delete(View view) {
 		QuestionPaper QuestionPaper = new QuestionPaper();
-		QuestionPaper.name = "һ�����2015������";
+		QuestionPaper.name = "一建机电2015年真题";
 		// db.deleteOldQuestionPaper(QuestionPaper);
 	}
 
@@ -137,9 +137,9 @@ public class SimulationTestMainActivity extends FragmentActivity {
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
-		// ����toast��ʾ��λ��
+		// 设置toast显示的位置
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ��ʾ��Toast
+		// 显示该Toast
 		toast.show();
 	}
 
