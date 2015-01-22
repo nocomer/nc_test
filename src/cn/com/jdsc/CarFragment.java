@@ -1,4 +1,4 @@
-package cn.com.jdsc;
+﻿package cn.com.jdsc;
 
 import cn.com.jdsc.R;
 import android.os.Bundle;

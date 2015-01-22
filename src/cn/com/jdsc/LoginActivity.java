@@ -1,4 +1,4 @@
-package cn.com.jdsc;
+﻿package cn.com.jdsc;
 
 import cn.com.jdsc.R;
 import nc.study.SimulationTestMainActivity;
@@ -42,9 +42,9 @@ public class LoginActivity extends Activity {
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
-		// ����toast��ʾ��λ��
+		// 设置toast显示的位置
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ��ʾ��Toast
+		// 显示该Toast
 		toast.show();
 	}
 }

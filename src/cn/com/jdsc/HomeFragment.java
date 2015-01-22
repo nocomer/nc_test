@@ -1,4 +1,4 @@
-package cn.com.jdsc;
+﻿package cn.com.jdsc;
 
 import cube.table.CubeTableActivity;
 import cn.com.jdsc.R;
@@ -73,9 +73,7 @@ public class HomeFragment extends Fragment {
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(getActivity(), str, Toast.LENGTH_LONG);
-		// ����toast��ʾ��λ��
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ��ʾ��Toast
 		toast.show();
 	}
 }

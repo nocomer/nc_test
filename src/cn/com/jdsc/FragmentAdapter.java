@@ -1,4 +1,4 @@
-package cn.com.jdsc;
+﻿package cn.com.jdsc;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
