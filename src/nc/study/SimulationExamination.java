@@ -1,4 +1,4 @@
-package nc.study;
+﻿package nc.study;
 
 public class SimulationExamination {
 
