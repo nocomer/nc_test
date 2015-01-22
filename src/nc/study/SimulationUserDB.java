@@ -1,1 +1,1 @@
-﻿
+﻿package nc.study;

@@ -1,7 +1,6 @@
-package nc.study;
+﻿package nc.study;
 
 import nc.lib.*;
-
 import java.util.List;
 
 import cn.com.jdsc.R;
@@ -97,7 +96,7 @@ public class SimulationSingleSelFragment extends Fragment {
 		
 		/*
 		 * ViewGroup p = (ViewGroup) view.getParent(); if (p != null) {
-		 * p.removeAllViewsInLayout(); Log.v("tag", "fragment1-->�Ƴ��Ѵ��ڵ�View"); }
+		 * p.removeAllViewsInLayout(); Log.v("tag", "fragment1-->移除已存在的View"); }
 		 */
 
 		view = inflater.inflate(R.layout.simulation_page_single_selection,
@@ -121,10 +120,10 @@ public class SimulationSingleSelFragment extends Fragment {
 		tvReferenceAnswer = (TextView) view
 				.findViewById(R.id.tvReferenceAnswer);
 
-		tvReferenceAnswer.setText("���ο��𰸡�");
+		tvReferenceAnswer.setText("【参考答案】");
 
 		tvAnalysisAnswer = (TextView) view.findViewById(R.id.tvAnalysisAnswer);
-		tvAnalysisAnswer.setText("���𰸽�����");
+		tvAnalysisAnswer.setText("【答案解析】");
 		
 		
 		
@@ -187,9 +186,9 @@ public class SimulationSingleSelFragment extends Fragment {
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(getActivity(), str, Toast.LENGTH_LONG);
-		// ����toast��ʾ��λ��
+		// 设置toast显示的位置
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ��ʾ��Toast
+		// 显示该Toast
 		toast.show();
 	}
 	
@@ -199,19 +198,19 @@ public class SimulationSingleSelFragment extends Fragment {
 			int RadioButtonId = group.getCheckedRadioButtonId();
 			switch (RadioButtonId) {
 			case R.id.radioButton1:
-				DisplayToast("��ѡ�����: A");
+				DisplayToast("你选择的是: A");
 				break;
 			case R.id.radioButton2:
-				DisplayToast("��ѡ�����: B");
+				DisplayToast("你选择的是: B");
 				break;
 			case R.id.radioButton3:
-				DisplayToast("��ѡ�����: C");
+				DisplayToast("你选择的是: C");
 				break;
 			case R.id.radioButton4:
-				DisplayToast("��ѡ�����: D");
+				DisplayToast("你选择的是: D");
 				break;
 			default:
-				DisplayToast("��δѡ��!");
+				DisplayToast("你未选择!");
 				break;
 			}
 

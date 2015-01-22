@@ -1,7 +1,6 @@
-package nc.study;
+﻿package nc.study;
 
 import nc.lib.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,12 +53,12 @@ public class SimulationTestBackupActivity extends Activity {
 
 	//private ImageView imageView;
 
-	/** ��СԲ���ͼƬ�������ʾ */
+	/** 将小圆点的图片用数组表示 */
 	//private ImageView[] imageViews;
 
-	// ���ͼƬ��LinearLayout
+	// 包裹滑动图片的LinearLayout
 	private ViewGroup viewPics;
-	// ���СԲ���LinearLayout
+	// 包裹小圆点的LinearLayout
 	//private ViewGroup viewPoints;
 
 	private SimulationDBManager db;
@@ -79,7 +78,7 @@ public class SimulationTestBackupActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.simulation_test);
 
-		/* �����ޱ����� */
+		/* 设置无标题栏 */
 		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		LayoutInflater main_inflater = LayoutInflater.from(this);
@@ -120,7 +119,7 @@ public class SimulationTestBackupActivity extends Activity {
 		List<EssayQuestion> EssayQuestions = db
 				.query_essayquestion_by_paper_id(QuestionPaper01.id);
 
-		// ������ѡ�ⴰ��
+		// 建立单选题窗口
 		int SingleSelsNum = SingleSels.size();
 
 		for (int n = 0; n < SingleSelsNum; n++) {
@@ -159,12 +158,12 @@ public class SimulationTestBackupActivity extends Activity {
 			Button btReferenceAnswer = (Button) view
 					.findViewById(R.id.btReferenceAnswer);
 
-			tvReferenceAnswer.setText("�ο���:" + SingleSel.reference_answer);
+			tvReferenceAnswer.setText("参考答案:" + SingleSel.reference_answer);
 			tvReferenceAnswer.setVisibility(View.INVISIBLE);
 
 			TextView tvAnalysisAnswer = (TextView) view
 					.findViewById(R.id.tvAnalysisAnswer);
-			tvAnalysisAnswer.setText("�𰸽���:��");
+			tvAnalysisAnswer.setText("答案解析:略");
 			tvAnalysisAnswer.setVisibility(View.INVISIBLE);
 			
 			// TODO
@@ -176,8 +175,8 @@ public class SimulationTestBackupActivity extends Activity {
 					 * .findViewById(R.id.tvReferenceAnswer);
 					 */
 					// tvReferenceAnswer.setVisibility(View.GONE);
-					DisplayToast("�ο���:" + SingleSel.reference_answer);
-					tvReferenceAnswer.setText("�ο���:"
+					DisplayToast("参考答案:" + SingleSel.reference_answer);
+					tvReferenceAnswer.setText("参考答案:"
 							+ SingleSel.reference_answer);
 				}
 			});
@@ -193,27 +192,27 @@ public class SimulationTestBackupActivity extends Activity {
 
 		}
 
-		// ����imageviews���飬��С��Ҫ��ʾ��ͼƬ������
+		// 创建imageviews数组，大小是要显示的图片的数量
 		//imageViews = new ImageView[pageViewList.size()];
-		// ��ָ����XML�ļ�������ͼ
+		// 从指定的XML文件加载视图
 		viewPics = (ViewGroup) inflater.inflate(R.layout.simulation_test, null);
 
 		
 
-		// ʵ��СԲ���linearLayout��viewpager
+		// 实例化小圆点的linearLayout和viewpager
 		//viewPoints = (ViewGroup) viewPics.findViewById(R.id.viewGroup);
 
-		// ���СԲ���ͼƬ
+		// 添加小圆点的图片
 /*		for (int i = 0; i < pageViewList.size(); i++) {
 			imageView = new ImageView(SimulationTestActivity.this);
-			// ����СԲ��imageview�Ĳ���
-			imageView.setLayoutParams(new LayoutParams(20, 20));// ����һ����߾�Ϊ20
+			// 设置小圆点imageview的参数
+			imageView.setLayoutParams(new LayoutParams(20, 20));// 创建一个宽高均为20
 
 			imageView.setPadding(20, 0, 20, 0);
-			// ��СԲ��layout��ӵ�������
+			// 将小圆点layout添加到数组中
 			imageViews[i] = imageView;
 
-			// Ĭ��ѡ�е��ǵ�һ��ͼƬ����ʱ��һ��СԲ����ѡ��״̬��������
+			// 默认选中的是第一张图片，此时第一个小圆点是选中状态，其他不是
 			if (i == 0) {
 				imageViews[i]
 						.setBackgroundResource(R.drawable.page_indicator_focused);
@@ -221,11 +220,11 @@ public class SimulationTestBackupActivity extends Activity {
 				imageViews[i].setBackgroundResource(R.drawable.page_indicator);
 			}
 
-			// ��imageviews��ӵ�СԲ����ͼ��
+			// 将imageviews添加到小圆点视图组
 			viewPoints.addView(imageViews[i]);
 		}*/
 
-		// ��ʾ����ͼƬ����ͼ
+		// 显示滑动图片的视图
 		setContentView(viewPics);
 		
 		viewPager = (ViewPager) viewPics.findViewById(R.id.viewPager);
@@ -242,14 +241,14 @@ public class SimulationTestBackupActivity extends Activity {
 
 	public void db_update(View view) {
 		QuestionPaper QuestionPaper = new QuestionPaper();
-		QuestionPaper.name = "һ�����05������";
-		QuestionPaper.name = "һ�����2015������";
+		QuestionPaper.name = "一建机电05年真题";
+		QuestionPaper.name = "一建机电2015年真题";
 		// db.updateAge(QuestionPaper);
 	}
 
 	public void db_delete(View view) {
 		QuestionPaper QuestionPaper = new QuestionPaper();
-		QuestionPaper.name = "һ�����2015������";
+		QuestionPaper.name = "一建机电2015年真题";
 		// db.deleteOldQuestionPaper(QuestionPaper);
 	}
 
@@ -276,14 +275,14 @@ public class SimulationTestBackupActivity extends Activity {
 	/*
 	 * public void db_queryTheCursor(View view) { Cursor c =
 	 * db.queryTheCursor(); startManagingCursor(c); //
-	 * �и���activity����Լ�����������ȥ����Cursor���������� CursorWrapper cursorWrapper = new
+	 * 托付给activity根据自己的生命周期去管理Cursor的生命周期 CursorWrapper cursorWrapper = new
 	 * CursorWrapper(c) {
 	 * 
-	 * @Override public String getString(int columnIndex) { // �����ǰ�������� if
+	 * @Override public String getString(int columnIndex) { // 将简介前加上年龄 if
 	 * (getColumnName(columnIndex).equals("info")) { int age =
 	 * getInt(getColumnIndex("age")); return age + " years old, " +
 	 * super.getString(columnIndex); } return super.getString(columnIndex); } };
-	 * // ȷ����ѯ�������"_id"��
+	 * // 确保查询结果中有"_id"列
 	 * 
 	 * SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
 	 * android.R.layout.simple_list_item_2, cursorWrapper, new String[]{"name",
@@ -303,7 +302,7 @@ public class SimulationTestBackupActivity extends Activity {
 
 	class GuidePageAdapter extends PagerAdapter {
 
-		// ���positionλ�õĽ���
+		// 销毁position位置的界面
 		@Override
 		public void destroyItem(View v, int position, Object arg2) {
 			// TODO Auto-generated method stub
@@ -317,14 +316,14 @@ public class SimulationTestBackupActivity extends Activity {
 
 		}
 
-		// ��ȡ��ǰ���������
+		// 获取当前窗体界面数
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
 			return pageViewList.size();
 		}
 
-		// ��ʼ��positionλ�õĽ���
+		// 初始化position位置的界面
 		@Override
 		public Object instantiateItem(View v, int position) {
 			// TODO Auto-generated method stub
@@ -332,7 +331,7 @@ public class SimulationTestBackupActivity extends Activity {
 			return pageViewList.get(position);
 		}
 
-		// �ж��Ƿ��ɶ�����ɽ���
+		// 判断是否由对象生成界面
 		@Override
 		public boolean isViewFromObject(View v, Object arg1) {
 			// TODO Auto-generated method stub
@@ -374,11 +373,11 @@ public class SimulationTestBackupActivity extends Activity {
 					myDrawable.getIntrinsicHeight());
 			ImageSpan span = new ImageSpan(myDrawable, ImageSpan.ALIGN_BASELINE);
 
-			ForegroundColorSpan fcs = new ForegroundColorSpan(Color.GREEN);// ������ɫ����Ϊ��ɫ
+			ForegroundColorSpan fcs = new ForegroundColorSpan(Color.GREEN);// 字体颜色设置为绿色
 			// ssb.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);//
-			// ����ͼ��
+			// 设置图标
 			// ssb.setSpan(fcs, 1, ssb.length(),
-			// Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);// ����������ɫ
+			// Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);// 设置字体颜色
 			ssb.setSpan(new RelativeSizeSpan(1.2f), 1, ssb.length(),
 					Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
@@ -425,7 +424,7 @@ public class SimulationTestBackupActivity extends Activity {
 		/*	for (int i = 0; i < imageViews.length; i++) {
 				imageViews[position]
 						.setBackgroundResource(R.drawable.page_indicator_focused);
-				// ���ǵ�ǰѡ�е�page����СԲ������Ϊδѡ�е�״̬
+				// 不是当前选中的page，其小圆点设置为未选中的状态
 				if (position != i) {
 					imageViews[i]
 							.setBackgroundResource(R.drawable.page_indicator);
@@ -457,19 +456,19 @@ public class SimulationTestBackupActivity extends Activity {
 			int RadioButtonId = group.getCheckedRadioButtonId();
 			switch (RadioButtonId) {
 			case R.id.radioButton1:
-				DisplayToast("��ѡ�����: A");
+				DisplayToast("你选择的是: A");
 				break;
 			case R.id.radioButton2:
-				DisplayToast("��ѡ�����: B");
+				DisplayToast("你选择的是: B");
 				break;
 			case R.id.radioButton3:
-				DisplayToast("��ѡ�����: C");
+				DisplayToast("你选择的是: C");
 				break;
 			case R.id.radioButton4:
-				DisplayToast("��ѡ�����: D");
+				DisplayToast("你选择的是: D");
 				break;
 			default:
-				DisplayToast("��δѡ��!");
+				DisplayToast("你未选择!");
 				break;
 			}
 
@@ -478,9 +477,9 @@ public class SimulationTestBackupActivity extends Activity {
 
 	public void DisplayToast(String str) {
 		Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
-		// ����toast��ʾ��λ��
+		// 设置toast显示的位置
 		toast.setGravity(Gravity.TOP, 0, 220);
-		// ��ʾ��Toast
+		// 显示该Toast
 		toast.show();
 	}
 
@@ -492,7 +491,7 @@ public class SimulationTestBackupActivity extends Activity {
 				TextView tvReferenceAnswer = (TextView) v
 						.findViewById(R.id.tvReferenceAnswer);
 				// tvReferenceAnswer.setVisibility(View.GONE);
-				// tvReferenceAnswer.setText("�ο���:" +
+				// tvReferenceAnswer.setText("参考答案:" +
 				// SingleSel.reference_answer);
 				DisplayToast("fuck");
 				// Log.d(TAG, "Start to recorder video\n");

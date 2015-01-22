@@ -9,18 +9,16 @@ public class Debug extends Application {
 	
 	public void nc_dialog(String msg){
 		new AlertDialog.Builder(this)
-			.setTitle("��ʾ")
+			.setTitle("标题")
 			.setMessage(msg)
-			.setPositiveButton("ȷ��",null)
+			.setPositiveButton("确定",null)
 			.show();
 	}
 	
-	public void nc_toast(String str)  
+	public void nc_toast(String str)
     {  
         Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);  
-        //����toast��ʾ��λ��  
         toast.setGravity(Gravity.TOP, 0, 220);  
-        //��ʾ��Toast  
         toast.show();
     }
 	
