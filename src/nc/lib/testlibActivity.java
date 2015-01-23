@@ -8,14 +8,22 @@ import android.view.Menu;
 import android.widget.TextView;  
 import android.widget.Toast;
   
-public class testActivity extends Activity {  
+public class testlibActivity extends Activity {  
     // statement of native function.Means it has been realized by native layer.  
     public native String TestFromJNI();  
     // Load library,No Prefix and Suffix.  
     static {    
         System.loadLibrary("nc_lib_test");
+       
     }
     
+/*    public native String ncstestFromJNI();
+    static {
+        System.loadLibrary("nc_stest");
+       
+    }*/
+    
+
     @Override  
     protected void onCreate(Bundle savedInstanceState) {  
         super.onCreate(savedInstanceState);  

@@ -3,6 +3,6 @@
 #include <string.h>
 /* Header for class nc_lib_test */
 
-JNIEXPORT jstring JNICALL Java_nc_lib_testActivity_TestFromJNI(JNIEnv *env, jobject thiz) {
-	return (*env)->NewStringUTF(env, "中文 HelloWorld! I am from JNI too!");
+JNIEXPORT jstring JNICALL Java_nc_lib_testlibActivity_TestFromJNI(JNIEnv *env, jobject thiz) {
+	return (*env)->NewStringUTF(env, "中文 1HelloWorld! I am from JNI too!");
 }

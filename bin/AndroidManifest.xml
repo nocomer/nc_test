@@ -26,7 +26,7 @@
         
         <activity android:name="cube.table.CubeTableActivity"/>
       <activity android:name="nc.study.SimulationTestMainActivity"/>
-      <activity android:name="nc.lib.testActivity"/>
+      <activity android:name="nc.lib.testlibActivity"/>
     </application>
 	
     <meta-data android:name="android.app.lib_name" android:value="nc_lib_test" />

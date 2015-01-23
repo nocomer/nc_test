@@ -2,7 +2,7 @@
 
 import cube.table.CubeTableActivity;
 import cn.com.jdsc.R;
-import nc.lib.testActivity;
+import nc.lib.testlibActivity;
 import nc.study.SimulationTestMainActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
 			public void onClick(View v) {
 				//DisplayToast("CubeTable Practice...");
 				Intent intent = new Intent(getActivity(),
-						testActivity.class);
+						testlibActivity.class);
 				startActivity(intent);
 				// getActivity().finish();
 			}

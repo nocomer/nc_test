@@ -12,7 +12,7 @@ extern "C" {
  * Method:    TestFromJNI
  * Signature: ()Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_nc_lib_testActivity_TestFromJNI
+JNIEXPORT jstring JNICALL Java_nc_lib_testlibActivity_TestFromJNI
   (JNIEnv *, jobject);
 
 #ifdef __cplusplus

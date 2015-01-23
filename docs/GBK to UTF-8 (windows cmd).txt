@@ -1,0 +1,50 @@
+依赖iconv for windows. 下载地址：
+1) http://files.cnblogs.com/adgnat/iconv.7z  
+2) http://gnuwin32.sourceforge.net/packages/libiconv.htm
+参考文章：http://www.cnblogs.com/adgnat/archive/2011/07/15/2107884.html
+和参考文章比较，我做的修改如下：
+1、增加了转码判断。假设做GBK->UTF-8，如果一个文本文件已经是UTF-8，则用iconv转换就会出错，这种情况下得判断出来不用再转换。
+2、增加了路径参数。不加路径参数就是对当前目录做转换。
+3、增加了转换输出。转换成功就输出yes，无需转换就输出nil。 方便统计转换了多少文件。
+ 
+备注：
+1、默认只对c/c++代码转换，其它语言请修改脚本中的(*.c *.h *.cpp *.hpp)。
+2、另见linux/unix bash版本
+ 
+GBKtoUTF8.bat
+@echo off
+if "%1"=="" (set workpath=.) else (set workpath=%1)
+for /r %workpath% %%i in (*.c *.h *.cpp *.hpp) do (
+    iconv -f UTF-8 -t UTF-8 %%i > %%i.icv 2>nul
+    rem 比较源文件和转换后的文件
+    fc /b %%i %%i.icv  1>nul 2>nul
+    if errorlevel 1 (
+        rem 不是utf8，默认为GBK
+        iconv -f GBK -t UTF-8 %%i > %%i.icv 2>nul
+        move /y %%i.icv %%i 1>nul 2>nul
+        echo yes %%i
+    ) else (
+         rem 本身就是utf8了
+         del /q %%i.icv
+         echo nul %%i
+    )
+)
+ 
+UTF8toGBK.bat
+@echo off
+if "%1"=="" (set workpath=.) else (set workpath=%1)
+for /r %workpath% %%i in (*.c *.h *.cpp *.hpp) do (
+    iconv -f GBK -t GBK %%i > %%i.icv 2>nul
+    rem 比较源文件和转换后的文件
+    fc /b %%i %%i.icv  1>nul 2>nul
+    if errorlevel 1 (
+        rem 不是gbk
+        iconv -f UTF-8 -t GBK %%i > %%i.icv 2>nul
+        move /y %%i.icv %%i 1>nul 2>nul
+        echo yes %%i
+    ) else (
+        rem 本身就是gbk
+        del /q %%i.icv
+        echo nul %%i
+    )
+)

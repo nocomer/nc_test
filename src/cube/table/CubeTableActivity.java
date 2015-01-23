@@ -6,7 +6,6 @@ import java.util.TimerTask;
 
 import cn.com.jdsc.R;
 
-//import net.youmi.android.AdManager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
