@@ -17,12 +17,6 @@ public class testlibActivity extends Activity {
        
     }
     
-/*    public native String ncstestFromJNI();
-    static {
-        System.loadLibrary("nc_stest");
-       
-    }*/
-    
 
     @Override  
     protected void onCreate(Bundle savedInstanceState) {  

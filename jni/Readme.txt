@@ -1,0 +1,1 @@
+1.Android.mk must be ANSI Code? Can not be utf-8?
