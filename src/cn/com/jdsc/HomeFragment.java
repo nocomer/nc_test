@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
 		cube_table_button.setOnClickListener(new Button.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				DisplayToast("CubeTable Practice...");
+				//DisplayToast("CubeTable Practice...");
 				Intent intent = new Intent(getActivity(),
 						CubeTableActivity.class);
 				startActivity(intent);

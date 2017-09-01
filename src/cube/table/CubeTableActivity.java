@@ -14,11 +14,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.EditText;
+import android.widget.Toast;
 
 //游戏界面
 public class CubeTableActivity extends Activity {
@@ -34,14 +36,14 @@ public class CubeTableActivity extends Activity {
 			mButton12, mButton13, mButton14, mButton15, mButton16, mButton17,
 			mButton18, mButton19, mButton20, mButton21, mButton22, mButton23,
 			mButton24, mButton25;
-	
+
 	private float mTime;
 	private float mRecord;
 	private int flagNum;
 
 	private DatabaseHelper dbHelper;
 	private SQLiteDatabase dbControl;
-	
+
 	private Timer myTime;
 	private boolean isChild = false;
 
@@ -51,6 +53,17 @@ public class CubeTableActivity extends Activity {
 			switch (msg.what) {
 			case 1:
 				mTime++;
+
+				if (mTime / 100 >= 25) {
+					DisplayToast("Fail:" + "Score > 25s");
+					myTime.cancel();
+					preStart();
+
+				}
+
+				break;
+			case 2: // restart
+				mTime = 0;
 				break;
 			}
 			super.handleMessage(msg);
@@ -60,18 +73,23 @@ public class CubeTableActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tool_cube_table);
-		//模式判定
-		isChild = getIntent().getBooleanExtra("isChild",false);
+		// 模式判定
+		isChild = getIntent().getBooleanExtra("isChild", false);
 		initButton();
-		initDB();	
-	}static{
-	   //AdManager.init("bef250a2bc952beb", "0bcd890f060f6154", 30, false,"1.0");  	    	
- }
-	//数据库操作对象初始化
+		initDB();
+	}
+
+	static {
+		// AdManager.init("bef250a2bc952beb", "0bcd890f060f6154", 30,
+		// false,"1.0");
+	}
+
+	// 数据库操作对象初始化
 	private void initDB() {
-		if(dbHelper == null){
-		dbHelper = new DatabaseHelper(CubeTableActivity.this, DatabaseHelper.DB_NAME, null, DatabaseHelper.dbVer);
-		}		
+		if (dbHelper == null) {
+			dbHelper = new DatabaseHelper(CubeTableActivity.this,
+					DatabaseHelper.DB_NAME, null, DatabaseHelper.dbVer);
+		}
 	}
 
 	// 初始化数字按钮
@@ -141,9 +159,21 @@ public class CubeTableActivity extends Activity {
 					// 开始游戏
 					if (buttonValue.equals(START_GAME)) {
 						startGame();
+					} else if (Integer.valueOf(buttonValue) == 25) {
+						String mScore = String.valueOf(mTime / 100) + "s";
+						DisplayToast("Score:" + mScore);
+						myTime.cancel();
+						// try {
+						// Thread.sleep(1000);
+						// } catch (InterruptedException e) {
+						// // TODO Auto-generated catch block
+						// e.printStackTrace();
+						// }
+						// startGame();
+						preStart();
 					} else {
 						// 判断是否为完成
-						if (checkNum(buttonValue,clickButton)) {							
+						if (checkNum(buttonValue, clickButton)) {
 							String mScore = "耗时" + String.valueOf(mRecord)
 									+ "秒，保存？";
 							Context mContext = CubeTableActivity.this;
@@ -165,7 +195,7 @@ public class CubeTableActivity extends Activity {
 										public void onClick(
 												DialogInterface dialog,
 												int whichButton) {
-											//保存记录
+											// 保存记录
 											markRecord(mRecord, edtInput
 													.getText().toString());
 											preStart();
@@ -198,34 +228,41 @@ public class CubeTableActivity extends Activity {
 		}
 	}
 
+	public void DisplayToast(String str) {
+		Toast toast = Toast.makeText(getApplicationContext(), str,
+				Toast.LENGTH_LONG);
+		toast.setGravity(Gravity.TOP, 0, 220);
+		toast.show();
+	}
+
 	private void markRecord(float mRecord, String mName) {
-		if(dbControl == null){
-		dbControl = dbHelper.getWritableDatabase();
+		if (dbControl == null) {
+			dbControl = dbHelper.getWritableDatabase();
 		}
-		//Date now = new Date();
-		//SimpleDateFormat myFormat = new SimpleDateFormat("yyyy"+"MM"+"dd");		
-		//String mdate = myFormat.format(now);
-		//String sql = "insert into tops (mname,mtime,mdate) VALUES ('" + mName + "','" + mRecord + "','" + mdate + "')";		
-		String sql = "insert into tops (mname,mtime) VALUES ('" + mName + "','" + mRecord + "')";
+		// Date now = new Date();
+		// SimpleDateFormat myFormat = new SimpleDateFormat("yyyy"+"MM"+"dd");
+		// String mdate = myFormat.format(now);
+		// String sql = "insert into tops (mname,mtime,mdate) VALUES ('" + mName
+		// + "','" + mRecord + "','" + mdate + "')";
+		String sql = "insert into tops (mname,mtime) VALUES ('" + mName + "','"
+				+ mRecord + "')";
 		dbControl.execSQL(sql);
 	}
-	
 
 	// 判断下一键
-	private Boolean checkNum(String strNum,myButton v) {
+	private Boolean checkNum(String strNum, myButton v) {
 		String mNum = String.valueOf(flagNum);
 		if (mNum.equals(strNum)) {
-			if(isChild)
-			{
+			if (isChild) {
 				v.changeColor();
 			}
 			if (flagNum == 25) {
 				// 计时结束
 				myTime.cancel();
-				mRecord = mTime / 100;				
+				mRecord = mTime / 100;
 				return true;
 			}
-			flagNum++;			
+			flagNum++;
 		}
 		return false;
 	}
@@ -236,7 +273,7 @@ public class CubeTableActivity extends Activity {
 		flagNum = 1;
 		for (int i = 1; i <= mList.size(); i++) {
 			myButton mButton = mList.get(i);
-			//模式FLAG
+			// 模式FLAG
 			mButton.mFlag = false;
 			if (i == 13) {
 				mButton.setText(START_GAME);
@@ -260,8 +297,8 @@ public class CubeTableActivity extends Activity {
 		mTime = 0;
 		flagNum = 1;
 		reDrawUI();
-		//计时器		
-		myTime = new Timer(true);		
+		// 计时器
+		myTime = new Timer(true);
 		TimerTask task = new TimerTask() {
 			public void run() {
 				Message message = new Message();
@@ -269,6 +306,6 @@ public class CubeTableActivity extends Activity {
 				handler.sendMessage(message);
 			}
 		};
-		myTime.schedule(task, 10, 10);		
+		myTime.schedule(task, 10, 10);
 	}
 }
